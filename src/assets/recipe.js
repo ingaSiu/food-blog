@@ -1,4 +1,4 @@
-export const recipe = [
+export const recipes = [
   {
     id: 1,
     title: 'Traški tortilija su jautiena',
