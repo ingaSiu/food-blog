@@ -9,7 +9,6 @@ const Home = () => {
     <>
       <Navbar />
       <HomeContainer>
-        <Sidebar />
         <PostsContainer>
           <HomePosts>
             {recipes.map((item) => (
@@ -17,6 +16,7 @@ const Home = () => {
             ))}
           </HomePosts>
         </PostsContainer>
+        <Sidebar />
       </HomeContainer>
     </>
   );

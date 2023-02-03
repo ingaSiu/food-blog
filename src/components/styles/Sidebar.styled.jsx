@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
 `;
 
 export const SmallWrapper = styled.div`
