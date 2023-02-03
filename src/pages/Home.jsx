@@ -1,17 +1,22 @@
 import Navbar from '../components/Navbar';
-import { HomeContainer, HomePosts } from '../components/styles/MainPage.style.jsx';
 import FoodCard from '../components/FoodCard';
-import { array } from '../assets/array';
+import Sidebar from '../components/Sidebar';
+import { HomeContainer, HomePosts, PostsContainer } from '../components/styles/MainPage.styled.jsx';
+
+import { recipes } from '../assets/recipe';
 const Home = () => {
   return (
     <>
       <Navbar />
       <HomeContainer>
-        <HomePosts>
-          {array.map((item) => (
-            <FoodCard key={item.title} title={item.title} imageUrl={item.imageUrl} />
-          ))}
-        </HomePosts>
+        <Sidebar />
+        <PostsContainer>
+          <HomePosts>
+            {recipes.map((item) => (
+              <FoodCard key={item.id} recipeId={item.id} title={item.title} imageUrl={item.imageUrl} />
+            ))}
+          </HomePosts>
+        </PostsContainer>
       </HomeContainer>
     </>
   );

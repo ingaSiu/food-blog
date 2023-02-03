@@ -4,7 +4,7 @@ import RecipePage from '../pages/RecipePage';
 
 export const HOME_PATH = '/';
 export const ABOUT_ME_PATH = `${HOME_PATH}about`;
-export const RECIPE_PAGE_PATH = `${HOME_PATH}:recipeId`;
+export const RECIPE_PAGE_PATH = `${HOME_PATH}post/:recipeId`;
 
 export const routes = [
   {

@@ -1,4 +1,4 @@
-import { NavbarContainer, NavbarLink, NavbarLinkContainer } from './styles/Navbar.style';
+import { NavbarContainer, NavbarLink, NavbarLinkContainer } from './styles/Navbar.styled';
 import { HOME_PATH, ABOUT_ME_PATH, RECIPE_PAGE_PATH } from '../routes/const';
 import Hero from './Hero';
 const Navbar = () => {

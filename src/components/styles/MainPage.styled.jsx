@@ -6,10 +6,16 @@ export const HomeContainer = styled.div`
   align-items: center;
 `;
 
+export const PostsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const HomePosts = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 3;
 `;
 
 export const FoodCardStyle = styled.div`
