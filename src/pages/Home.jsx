@@ -5,7 +5,6 @@ import { HomeContainer, HomePosts, PostsContainer } from '../components/styles/M
 import { PostsContext } from '../contexts/PostsContext';
 import { useContext } from 'react';
 
-import { recipes } from '../assets/recipe';
 const Home = () => {
   const { posts } = useContext(PostsContext);
   console.log(posts);

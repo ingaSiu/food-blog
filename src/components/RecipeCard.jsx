@@ -1,12 +1,12 @@
 import { CardContainer } from './styles/RecipeCard.styled';
+import { Parser } from 'html-to-react';
 
-const RecipeCard = ({ title, imageUrl, ingriedients, making }) => {
+const RecipeCard = ({ title, imageUrl, content }) => {
   return (
     <CardContainer>
       <h1>{title}</h1>
       <img src={imageUrl} alt={title} />
-      <p>{ingriedients}</p>
-      <p>{making}</p>
+      {Parser().parse(content)}
     </CardContainer>
   );
 };

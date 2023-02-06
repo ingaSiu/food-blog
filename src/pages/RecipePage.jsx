@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { PageContainer } from '../components/styles/RecipeCard.styled';
 const RecipePage = () => {
-  const [recipeData, setRecipeData] = useState(undefined);
+  const [recipeData, setRecipeData] = useState({});
   const { recipeId } = useParams();
   const getPost = () => {
     axios
@@ -26,16 +26,14 @@ const RecipePage = () => {
   return (
     <>
       <PageContainer>
-        {recipeData &&
-          recipeData.map((recipe) => (
-            <RecipeCard
-              key={recipe._id}
-              title={recipe.title}
-              imageUrl={recipe.imageUrl}
-              ingriedients={recipe.content}
-              making={recipe.content}
-            ></RecipeCard>
-          ))}
+        {recipeData && (
+          <RecipeCard
+            key={recipeData._id}
+            title={recipeData.title}
+            imageUrl={recipeData.imageUrl}
+            content={recipeData.content}
+          ></RecipeCard>
+        )}
       </PageContainer>
     </>
   );
