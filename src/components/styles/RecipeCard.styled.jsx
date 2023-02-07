@@ -20,3 +20,9 @@ export const CardContainer = styled.div`
     text-align: left;
   }
 `;
+
+export const ContentContainer = styled.div`
+  ul {
+    text-align: left;
+  }
+`;

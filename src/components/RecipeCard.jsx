@@ -1,4 +1,4 @@
-import { CardContainer } from './styles/RecipeCard.styled';
+import { CardContainer, ContentContainer } from './styles/RecipeCard.styled';
 import { Parser } from 'html-to-react';
 
 const RecipeCard = ({ title, imageUrl, content }) => {
@@ -6,7 +6,7 @@ const RecipeCard = ({ title, imageUrl, content }) => {
     <CardContainer>
       <h1>{title}</h1>
       <img src={imageUrl} alt={title} />
-      {Parser().parse(content)}
+      <ContentContainer>{Parser().parse(content)}</ContentContainer>
     </CardContainer>
   );
 };

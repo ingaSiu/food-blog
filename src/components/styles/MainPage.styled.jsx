@@ -28,6 +28,6 @@ export const FoodCardStyle = styled.div`
     width: 600px;
   }
   img {
-    width: 90%;
+    width: 500px;
   }
 `;
