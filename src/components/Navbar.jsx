@@ -1,14 +1,15 @@
 import { NavbarContainer, NavbarLink, NavbarLinkContainer, IconContainer, IconText } from './styles/Navbar.styled';
 import { HOME_PATH, ABOUT_ME_PATH, TRAVEL_PATH } from '../routes/const';
-import Hero from './Hero';
+
 import SearchBar from './SearchBar';
+import logo from '../assets/images/logo.png';
 const Navbar = () => {
   return (
     <>
       <NavbarContainer>
         <NavbarLinkContainer>
           <IconContainer>
-            <img src="https://cdn.icon-icons.com/icons2/2787/PNG/512/black_cat_icon_177458.png" alt="Black Cat" />
+            <img src={logo} alt="Black Cat" />
           </IconContainer>
           <IconText>Nekotastic kitchen</IconText>
         </NavbarLinkContainer>
