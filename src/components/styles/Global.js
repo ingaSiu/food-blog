@@ -3,14 +3,15 @@ import gloriaHallelujah from '../../assets/fonts/gloriaHallelujah.woff2';
 import lato from '../../assets/fonts/lato.woff2';
 
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
 
  body, button {
   font-family: 'Lato', sans-serif;
   background: #fff;
   margin: 0;
 }
-
+h1 {
+  margin: 0;
+}
 //https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap
 @font-face {
   font-family: 'Lato';

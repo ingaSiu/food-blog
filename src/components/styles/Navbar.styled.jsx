@@ -28,9 +28,9 @@ export const NavbarLink = styled(Link)`
 
 export const IconContainer = styled.div`
   display: flex;
-
+  width: 80px;
   img {
-    width: 60px;
+    width: 100%;
   }
 `;
 
