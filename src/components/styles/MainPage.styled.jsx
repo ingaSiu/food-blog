@@ -13,7 +13,6 @@ export const PostsContainer = styled.div`
 export const HomePosts = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 export const FoodCardStyle = styled.div`
@@ -28,6 +27,6 @@ export const FoodCardStyle = styled.div`
     width: 600px;
   }
   img {
-    width: 500px;
+    width: 700px;
   }
 `;
