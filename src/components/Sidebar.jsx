@@ -9,21 +9,26 @@ import {
 } from './styles/Sidebar.styled';
 import logo from '../assets/images/logo.png';
 
-const Sidebar = () => {
+const Sidebar = ({ categories }) => {
   return (
     <SidebarContainer>
       <SmallWrapper>
         <SidebarTitle>About me</SidebarTitle>
         <img src={logo} alt="Black Cat" />
         <SideText>
-          <Greeting>Hi there!</Greeting>
-          I'm Inga and this is space for celebrating and creating good food at home. <br />
+          <Greeting>Hello there!</Greeting>
+          I'm Inga and this is space for enjoying and creating good food at home. <br />
           This blog is about my obsession with food and interesting expierences.
         </SideText>
       </SmallWrapper>
 
       <SmallWrapper>
         <SidebarTitle>Categories</SidebarTitle>
+        <div>
+          {categories.map((item) => (
+            <p key={item._id}>{item.title}</p>
+          ))}
+        </div>
         <SideText>here to map category.title</SideText>
       </SmallWrapper>
 

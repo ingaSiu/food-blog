@@ -3,14 +3,18 @@ import FoodCard from '../components/FoodCard';
 import Sidebar from '../components/Sidebar';
 import { HomeContainer, HomePosts, PostsContainer } from '../components/styles/MainPage.styled.jsx';
 import { PostsContext } from '../contexts/PostsContext';
+import { CategoryContext } from '../contexts/CategoryContext';
 import { useContext } from 'react';
+import Footer from '../components/Footer';
 
 const Home = () => {
   const { posts } = useContext(PostsContext);
+  const { categories } = useContext(CategoryContext);
   console.log(posts);
+  console.log(categories);
   return (
     <>
-      <Navbar />
+      <Navbar categories={categories} />
       <HomeContainer>
         <PostsContainer>
           <HomePosts>
@@ -19,8 +23,9 @@ const Home = () => {
             ))}
           </HomePosts>
         </PostsContainer>
-        <Sidebar />
+        <Sidebar categories={categories} />
       </HomeContainer>
+      <Footer />
     </>
   );
 };
