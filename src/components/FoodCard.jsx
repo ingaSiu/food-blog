@@ -9,7 +9,7 @@ const FoodCard = ({ recipeId, title, imageUrl }) => {
       <h1>{title}</h1>
       <img src={imageUrl} alt={title} />
       <Button>
-        <ButtonLink to={generatePath(RECIPE_PAGE_PATH, { recipeId })}>Skaityti toliau → </ButtonLink>
+        <ButtonLink to={generatePath(RECIPE_PAGE_PATH, { recipeId })}>Read more → </ButtonLink>
       </Button>
     </FoodCardStyle>
   );

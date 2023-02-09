@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { PageContainer } from '../components/styles/RecipeCard.styled';
+
 const RecipePage = () => {
   const [recipeData, setRecipeData] = useState({});
   const { recipeId } = useParams();
@@ -20,7 +21,7 @@ const RecipePage = () => {
 
   useEffect(() => {
     getPost();
-  }, []);
+  });
 
   console.log(useParams());
   return (
