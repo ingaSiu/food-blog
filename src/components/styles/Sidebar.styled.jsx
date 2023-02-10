@@ -27,24 +27,30 @@ export const SidebarTitle = styled.div`
   color: grey;
   padding: 10px 15px;
   margin-bottom: 10px;
+  width: 100%;
 `;
 export const SideText = styled.div`
   max-width: 200px;
   text-align: center;
   margin-bottom: 10px;
-  p {
-    font-size: 18px;
-    line-height: 8px;
-  }
+  line-height: 18px;
 `;
 export const Greeting = styled.p`
-  font-size: 25px;
-  font-family: cursive;
+  font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
+  font-size: 24px;
+`;
+export const CategoriesContainer = styled.div`
+  line-height: 18px;
+
+  p {
+    text-transform: uppercase;
+  }
 `;
 
 export const InputEmail = styled.input`
   padding: 10px;
+  width: 100%;
   outline: none;
   background-color: lightgray;
   border: none;
@@ -53,7 +59,7 @@ export const InputEmail = styled.input`
 export const SideBtn = styled.button`
   margin-top: 10px;
   padding: 10px;
-  width: 90px;
+  width: 100%;
   border: 1px solid violet;
   outline: none;
 

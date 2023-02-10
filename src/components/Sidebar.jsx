@@ -6,6 +6,7 @@ import {
   Greeting,
   InputEmail,
   SideBtn,
+  CategoriesContainer,
 } from './styles/Sidebar.styled';
 import logo from '../assets/images/logo.png';
 
@@ -17,24 +18,27 @@ const Sidebar = ({ categories }) => {
         <img src={logo} alt="Black Cat" />
         <SideText>
           <Greeting>Hello there!</Greeting>
-          I'm Inga and this is space for enjoying and creating good food at home. <br />
-          This blog is about my obsession with food and interesting expierences.
+          <p>
+            I'm Inga and this is space for enjoying and creating good food at home. <br />
+            This blog is about my obsession with food and interesting expierences.
+          </p>
         </SideText>
       </SmallWrapper>
 
       <SmallWrapper>
         <SidebarTitle>Categories</SidebarTitle>
-        <div>
+        <CategoriesContainer>
           {categories.map((item) => (
-            <p key={item._id}>{item.title}</p>
+            <p key={item._id}> &#62; {item.title}</p>
           ))}
-        </div>
-        <SideText>here to map category.title</SideText>
+        </CategoriesContainer>
       </SmallWrapper>
 
       <SmallWrapper>
         <SidebarTitle>Newsletter</SidebarTitle>
-        <SideText>Interested and don't want to miss new content? Subscribe to newsletter</SideText>
+        <SideText>
+          <p>Interested and don't want to miss new content? Subscribe to newsletter</p>
+        </SideText>
         <InputEmail />
         <SideBtn>I want!</SideBtn>
       </SmallWrapper>
