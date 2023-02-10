@@ -9,9 +9,11 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <Navbar categories={categories} />
+      <FlexContainer>
+        <Wrapper>{children}</Wrapper>
+        <Sidebar categories={categories} />
+      </FlexContainer>
 
-      <Wrapper>{children}</Wrapper>
-      <Sidebar categories={categories} />
       <Footer />
     </>
   );
@@ -19,5 +21,9 @@ const MainLayout = ({ children }) => {
 export default MainLayout;
 
 const Wrapper = styled.div`
-  padding: 20px 40px;
+  padding: 0 40px;
+`;
+const FlexContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `;
