@@ -42,7 +42,6 @@ export const Greeting = styled.p`
 `;
 export const CategoriesContainer = styled.div`
   line-height: 18px;
-
   p {
     text-transform: uppercase;
   }

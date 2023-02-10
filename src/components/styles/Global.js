@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
   font-family: 'Lato', sans-serif;
   background: #fff;
   margin: 0;
+  box-sizing: border-box;
 }
 h1 {
   margin: 0;

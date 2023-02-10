@@ -22,7 +22,7 @@ export const NavbarLink = styled(Link)`
   text-decoration: none;
   padding: 10px;
   text-transform: uppercase;
-  color: purple;
+  color: black;
   font-size: 20px;
 `;
 
