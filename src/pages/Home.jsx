@@ -1,4 +1,5 @@
 import FoodCard from '../components/FoodCard';
+import FoodCards from '../components/FoodCards';
 import { HomePosts, PostsContainer } from '../components/styles/MainPage.styled.jsx';
 import { PostsContext } from '../contexts/PostsContext';
 import { CategoryContext } from '../contexts/CategoryContext';
@@ -11,13 +12,7 @@ const Home = () => {
   console.log(categories);
   return (
     <>
-      <PostsContainer>
-        <HomePosts>
-          {posts.map((item) => (
-            <FoodCard key={item._id} recipeId={item._id} title={item.title} imageUrl={item.imageUrl} />
-          ))}
-        </HomePosts>
-      </PostsContainer>
+      <FoodCards posts={posts} />
     </>
   );
 };
