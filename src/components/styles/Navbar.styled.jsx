@@ -16,6 +16,8 @@ export const NavbarContainer = styled.div`
 
 export const NavbarLinkContainer = styled.div`
   display: flex;
+  text-decoration: none;
+  color: black;
 `;
 
 export const NavbarLink = styled(Link)`

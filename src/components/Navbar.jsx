@@ -1,13 +1,13 @@
 import { NavbarContainer, NavbarLink, NavbarLinkContainer, IconContainer, IconText } from './styles/Navbar.styled';
 import { HOME_PATH, ABOUT_ME_PATH, TRAVEL_PATH } from '../routes/const';
-
+import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import logo from '../assets/images/logo.png';
 const Navbar = () => {
   return (
     <>
       <NavbarContainer>
-        <NavbarLinkContainer>
+        <NavbarLinkContainer as={Link} to={HOME_PATH}>
           <IconContainer>
             <img src={logo} alt="Black Cat" />
           </IconContainer>
