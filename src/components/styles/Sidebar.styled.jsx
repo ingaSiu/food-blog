@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const SidebarContainer = styled.div`
@@ -42,9 +43,19 @@ export const Greeting = styled.p`
 `;
 export const CategoriesContainer = styled.div`
   line-height: 18px;
-  p {
-    text-transform: uppercase;
+`;
+export const CategoriesList = styled.ul`
+  list-style-type: none;
+
+  li {
+    text-decoration: none;
+    padding-bottom: 5px;
   }
+`;
+export const CategoriesLink = styled(Link)`
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
 `;
 
 export const InputEmail = styled.input`

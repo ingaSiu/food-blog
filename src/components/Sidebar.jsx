@@ -7,8 +7,12 @@ import {
   InputEmail,
   SideBtn,
   CategoriesContainer,
+  CategoriesLink,
+  CategoriesList,
 } from './styles/Sidebar.styled';
 import logo from '../assets/images/logo.png';
+import { generatePath } from 'react-router-dom';
+import { CATEGORY_PAGE_PATH } from '../routes/const';
 
 const Sidebar = ({ categories }) => {
   return (
@@ -28,9 +32,15 @@ const Sidebar = ({ categories }) => {
       <SmallWrapper>
         <SidebarTitle>Categories</SidebarTitle>
         <CategoriesContainer>
-          {categories.map((item) => (
-            <p key={item._id}> &#62; {item.title}</p>
-          ))}
+          <CategoriesList>
+            {categories.map((item) => (
+              <li key={item._id}>
+                <CategoriesLink to={generatePath(CATEGORY_PAGE_PATH, { categoryId: item._id })}>
+                  &#62; {item.title}
+                </CategoriesLink>{' '}
+              </li>
+            ))}
+          </CategoriesList>
         </CategoriesContainer>
       </SmallWrapper>
 
