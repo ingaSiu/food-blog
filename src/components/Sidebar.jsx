@@ -35,9 +35,9 @@ const Sidebar = ({ categories }) => {
           <CategoriesList>
             {categories.map((item) => (
               <li key={item._id}>
-                <CategoriesLink to={generatePath(CATEGORY_PAGE_PATH, { categoryId: item._id })}>
+                <CategoriesLink key={item._id} to={generatePath(CATEGORY_PAGE_PATH, { categoryId: item._id })}>
                   &#62; {item.title}
-                </CategoriesLink>{' '}
+                </CategoriesLink>
               </li>
             ))}
           </CategoriesList>
