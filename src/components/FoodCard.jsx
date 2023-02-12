@@ -1,4 +1,4 @@
-import { FoodCardStyle } from './styles/MainPage.styled';
+import { FoodCardStyle } from './styles/FoodCard.styled';
 import { generatePath } from 'react-router-dom';
 import { Button, ButtonLink } from './styles/Button.styled';
 import { RECIPE_PAGE_PATH } from '../routes/const';
