@@ -21,7 +21,7 @@ const RecipePage = () => {
 
   useEffect(() => {
     getPost();
-  });
+  }, [recipeId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   console.log(useParams());
   return (
