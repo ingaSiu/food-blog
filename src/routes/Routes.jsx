@@ -1,6 +1,6 @@
 import { Route, Routes as RoutesWrapper } from 'react-router-dom';
 import { mainLayoutRoutes, ADMIN_LOGIN_PATH } from './const';
-import AdminLogin from '../pages/AdminLogin';
+import AdminLogin from '../pages/Admin/AdminLogin';
 
 const Routes = () => {
   const { routes, Layout } = mainLayoutRoutes;
