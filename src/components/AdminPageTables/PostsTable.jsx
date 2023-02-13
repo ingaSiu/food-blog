@@ -10,35 +10,41 @@ import { useContext } from 'react';
 
 import { PostsContext } from '../../contexts/PostsContext';
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
-const PostsTable = () => {
+const PostsTable = ({ delIcon, editIcon }) => {
   const { posts } = useContext(PostsContext);
-  return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Post title</TableCell>
-            <TableCell align="center">Post&nbsp;ID</TableCell>
-            <TableCell align="center">Category&nbsp;ID</TableCell>
-            <TableCell align="center">Edit&nbsp;or Delete</TableCell>
-          </TableRow>
-        </TableHead>
 
-        <TableBody>
-          {posts.map((post) => (
-            <TableRow key={post._id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row">
-                {post.title}
-              </TableCell>
-              <TableCell align="right">{post._id}</TableCell>
-              <TableCell align="right">{post.categoryId}</TableCell>
-              <TableCell align="right">{}</TableCell>
+  return (
+    <>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Post title</TableCell>
+              <TableCell align="center">Post&nbsp;ID</TableCell>
+              <TableCell align="center">Category&nbsp;ID</TableCell>
+              <TableCell align="center">Edit</TableCell>
+              <TableCell align="center"> Delete</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+
+          <TableBody>
+            {posts.map((post) => (
+              <TableRow key={post._id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                <TableCell component="th" scope="row">
+                  {post.title}
+                </TableCell>
+                <TableCell align="right">{post._id}</TableCell>
+                <TableCell align="right">{post.categoryId}</TableCell>
+                <TableCell align="center">{(editIcon = <EditIcon />)}</TableCell>
+                <TableCell align="center">{(delIcon = <DeleteIcon />)}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 };
 

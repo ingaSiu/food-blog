@@ -9,9 +9,10 @@ import Paper from '@mui/material/Paper';
 import { useContext } from 'react';
 
 import { CategoryContext } from '../../contexts/CategoryContext';
-import DeleteIcon from '@mui/icons-material/Delete';
 
-const CategoriesTable = () => {
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+const CategoriesTable = ({ delIcon, editIcon }) => {
   const { categories } = useContext(CategoryContext);
   return (
     <TableContainer component={Paper}>
@@ -20,7 +21,8 @@ const CategoriesTable = () => {
           <TableRow>
             <TableCell>Category title</TableCell>
             <TableCell align="center">Category&nbsp;ID</TableCell>
-            <TableCell align="center">Edit&nbsp;or Delete</TableCell>
+            <TableCell align="center">Edit</TableCell>
+            <TableCell align="center"> Delete</TableCell>
           </TableRow>
         </TableHead>
 
@@ -31,8 +33,8 @@ const CategoriesTable = () => {
                 {category.title}
               </TableCell>
               <TableCell align="right">{category._id}</TableCell>
-
-              <TableCell align="right">{}</TableCell>
+              <TableCell align="center">{(editIcon = <EditIcon />)}</TableCell>
+              <TableCell align="center">{(delIcon = <DeleteIcon />)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
