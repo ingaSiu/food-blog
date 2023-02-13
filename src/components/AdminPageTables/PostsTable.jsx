@@ -24,7 +24,7 @@ const PostsTable = ({ delIcon, editIcon }) => {
         const category = categories.find((cat) => {
           return post.categoryId === cat._id;
         });
-        return { ...post, categoryTitle: category.title };
+        return { ...post, categoryTitle: category ? category.title : '' };
       }),
     );
   }, [posts, categories]); // eslint-disable-line react-hooks/exhaustive-deps

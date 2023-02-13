@@ -1,6 +1,7 @@
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-
+import { useContext } from 'react';
+import { CategoryContext } from '../../contexts/CategoryContext';
 import { FormikInput } from './FormikInputs';
 
 const validationSchema = Yup.object().shape({
@@ -16,6 +17,7 @@ const validationSchema = Yup.object().shape({
 });
 
 const CreateNewPost = () => {
+  const { categories } = useContext(CategoryContext);
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
@@ -42,8 +44,15 @@ const CreateNewPost = () => {
             <h1>Create a new post</h1>
             <FormikInput name="title" placeholder="Post title" />
             <FormikInput name="imageUrl" placeholder="Main image URL" />
-            <FormikInput type="textarea" name="content" placeholder="Write post content" />
-            <FormikInput type="textarea" name="categoryId" placeholder="Write category ID " />
+            <FormikInput as="textarea" name="content" placeholder="Write post content" />
+            <FormikInput as="select" name="categoryId">
+              {categories &&
+                categories.map((item) => (
+                  <option key={item._id} value={item._id}>
+                    {item.title}
+                  </option>
+                ))}
+            </FormikInput>
 
             <button type="submit" disabled={isSubmitting}>
               Submit
