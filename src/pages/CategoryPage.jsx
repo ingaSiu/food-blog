@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { CategoryContext } from '../contexts/CategoryContext';
-import FoodCardMapping from './FoodCardMapping';
+import { useContext } from 'react';
+
 import { PostsContainer } from '../components/styles/MainPage.styled';
 import { CategoryTitleContainer } from '../components/styles/FoodCard.styled';
-import { useContext } from 'react';
+import { CategoryContext } from '../contexts/CategoryContext';
+import FoodCardMapping from './FoodCardMapping';
+
 const CategoryPage = () => {
   const [postsData, setPostsData] = useState([]);
   const [categoryTitle, setCategoryTitle] = useState('');
