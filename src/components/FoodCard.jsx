@@ -1,6 +1,6 @@
 import { FoodCardStyle } from './styles/FoodCard.styled';
 import { generatePath } from 'react-router-dom';
-import { Button, ButtonLink } from './styles/Button.styled';
+import { ButtonStyle, ButtonLink } from './styles/Button.styled';
 import { RECIPE_PAGE_PATH } from '../routes/const';
 
 const FoodCard = ({ recipeId, title, imageUrl }) => {
@@ -8,9 +8,9 @@ const FoodCard = ({ recipeId, title, imageUrl }) => {
     <FoodCardStyle>
       <h1>{title}</h1>
       <img src={imageUrl} alt={title} />
-      <Button>
+      <ButtonStyle>
         <ButtonLink to={generatePath(RECIPE_PAGE_PATH, { recipeId })}>Read more → </ButtonLink>
-      </Button>
+      </ButtonStyle>
     </FoodCardStyle>
   );
 };

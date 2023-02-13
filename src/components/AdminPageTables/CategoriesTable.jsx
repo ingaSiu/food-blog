@@ -7,13 +7,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useContext } from 'react';
-
+import { DelIcon, EdIcon } from './TableIcons';
 import { CategoryContext } from '../../contexts/CategoryContext';
 
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 const CategoriesTable = ({ delIcon, editIcon }) => {
   const { categories } = useContext(CategoryContext);
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -33,8 +32,8 @@ const CategoriesTable = ({ delIcon, editIcon }) => {
                 {category.title}
               </TableCell>
               <TableCell align="right">{category._id}</TableCell>
-              <TableCell align="center">{(editIcon = <EditIcon />)}</TableCell>
-              <TableCell align="center">{(delIcon = <DeleteIcon />)}</TableCell>
+              <TableCell align="center">{(editIcon = <EdIcon onClick={() => alert('test ed')} />)}</TableCell>
+              <TableCell align="center">{(delIcon = <DelIcon onClick={() => alert('test del')} />)}</TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -2,7 +2,7 @@ import { NavbarContainer, NavbarLink, NavbarLinkContainer, IconContainer, IconTe
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import logo from '../assets/images/logo.png';
-import { Button, ButtonLink } from './styles/Button.styled';
+import { ButtonStyle, ButtonLink } from './styles/Button.styled';
 const Navbar = ({ links, homeLink, isAdmin }) => {
   return (
     <>
@@ -24,9 +24,9 @@ const Navbar = ({ links, homeLink, isAdmin }) => {
 
         {!isAdmin && <SearchBar />}
         {isAdmin && (
-          <Button>
+          <ButtonStyle>
             <ButtonLink to={homeLink}>Logout</ButtonLink>
-          </Button>
+          </ButtonStyle>
         )}
       </NavbarContainer>
     </>
