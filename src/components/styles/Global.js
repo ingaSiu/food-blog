@@ -4,7 +4,7 @@ import lato from '../../assets/fonts/lato.woff2';
 
 const GlobalStyles = createGlobalStyle`
 
- body, button {
+ body, button, form, input, textarea, select {
   font-family: 'Lato', sans-serif;
   background: #fff;
   margin: 0;

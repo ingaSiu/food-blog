@@ -3,6 +3,8 @@ import * as Yup from 'yup';
 import { useContext } from 'react';
 import { CategoryContext } from '../../contexts/CategoryContext';
 import { FormikInput } from './FormikInputs';
+import { FormStyle } from './Form.styled';
+import ButtonMain from '../Button';
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -41,22 +43,24 @@ const CreateNewPost = () => {
       >
         {({ isSubmitting }) => (
           <Form>
-            <h1>Create a new post</h1>
-            <FormikInput name="title" placeholder="Post title" />
-            <FormikInput name="imageUrl" placeholder="Main image URL" />
-            <FormikInput as="textarea" name="content" placeholder="Write post content" />
-            <FormikInput as="select" name="categoryId">
-              {categories &&
-                categories.map((item) => (
-                  <option key={item._id} value={item._id}>
-                    {item.title}
-                  </option>
-                ))}
-            </FormikInput>
+            <FormStyle>
+              <h1>Create a new post</h1>
+              <FormikInput name="title" placeholder="Post title" />
+              <FormikInput name="imageUrl" placeholder="Main image URL" />
+              <FormikInput as="textarea" name="content" placeholder="Write post content" />
+              <FormikInput as="select" name="categoryId">
+                {categories &&
+                  categories.map((item) => (
+                    <option key={item._id} value={item._id}>
+                      {item.title}
+                    </option>
+                  ))}
+              </FormikInput>
 
-            <button type="submit" disabled={isSubmitting}>
-              Submit
-            </button>
+              <ButtonMain type="submit" disabled={isSubmitting}>
+                Submit
+              </ButtonMain>
+            </FormStyle>
           </Form>
         )}
       </Formik>
