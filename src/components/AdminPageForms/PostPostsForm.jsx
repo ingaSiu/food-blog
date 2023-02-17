@@ -1,9 +1,9 @@
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { useContext } from 'react';
+import styled from 'styled-components';
 import { CategoryContext } from '../../contexts/CategoryContext';
 import { FormikInput } from './FormikInputs';
-import { FormStyle } from './Form.styled';
 import ButtonMain from '../Button';
 
 const validationSchema = Yup.object().shape({
@@ -15,7 +15,7 @@ const validationSchema = Yup.object().shape({
     )
     .required('Please enter website'),
   content: Yup.string().required('Required'),
-  categoryId: Yup.string().required('Required'),
+  categoryId: Yup.string().required('Required. Please choose a category'),
 });
 
 const CreateNewPost = () => {
@@ -42,27 +42,25 @@ const CreateNewPost = () => {
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (
-          <Form>
-            <FormStyle>
-              <h1>Create a new post</h1>
-              <FormikInput name="title" placeholder="Post title" />
-              <FormikInput name="imageUrl" placeholder="Main image URL" />
-              <FormikInput as="textarea" name="content" placeholder="Write post content" />
-              <FormikInput as="select" name="categoryId">
-                <option value="">Choose a category </option>
-                {categories &&
-                  categories.map((item) => (
-                    <option key={item._id} value={item._id}>
-                      {item.title}
-                    </option>
-                  ))}
-              </FormikInput>
+          <FormStyle>
+            <h1>Create a new post</h1>
+            <FormikInput name="title" placeholder="Post title" />
+            <FormikInput name="imageUrl" placeholder="Main image URL" />
+            <FormikInput as="textarea" name="content" placeholder="Write post content" />
+            <FormikInput as="select" name="categoryId">
+              <option value="">Choose a category </option>
+              {categories &&
+                categories.map((item) => (
+                  <option key={item._id} value={item._id}>
+                    {item.title}
+                  </option>
+                ))}
+            </FormikInput>
 
-              <ButtonMain type="submit" disabled={isSubmitting}>
-                Submit
-              </ButtonMain>
-            </FormStyle>
-          </Form>
+            <ButtonMain type="submit" disabled={isSubmitting}>
+              Submit
+            </ButtonMain>
+          </FormStyle>
         )}
       </Formik>
     </div>
@@ -70,3 +68,12 @@ const CreateNewPost = () => {
 };
 
 export default CreateNewPost;
+
+const FormStyle = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 20px;
+  gap: 20px;
+  border: 1px solid grey;
+`;
