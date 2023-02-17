@@ -49,6 +49,7 @@ const CreateNewPost = () => {
               <FormikInput name="imageUrl" placeholder="Main image URL" />
               <FormikInput as="textarea" name="content" placeholder="Write post content" />
               <FormikInput as="select" name="categoryId">
+                <option value="">Choose a category </option>
                 {categories &&
                   categories.map((item) => (
                     <option key={item._id} value={item._id}>
