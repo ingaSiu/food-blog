@@ -3,12 +3,14 @@ import gloriaHallelujah from '../../assets/fonts/gloriaHallelujah.woff2';
 import lato from '../../assets/fonts/lato.woff2';
 
 const GlobalStyles = createGlobalStyle`
-
- body, button, form, input, textarea, select {
-  font-family: 'Lato', sans-serif;
+body {
   background: #fff;
   margin: 0;
   box-sizing: border-box;
+}
+ body, button, form, input, textarea, select {
+  font-family: 'Lato', sans-serif;
+  
 }
 h1 {
   margin: 0;

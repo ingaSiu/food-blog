@@ -8,14 +8,18 @@ export const ButtonStyle = styled.button`
   outline: #fff;
   width: 150px;
   height: 45px;
+  color: #b46b2b;
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
 `;
 
 export const ButtonLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   color: #b46b2b;
-
   &:hover {
-    color: black;
+    color: inherit;
   }
 `;
