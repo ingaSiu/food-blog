@@ -12,8 +12,9 @@ import { PostsContext } from '../../contexts/PostsContext';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useState, useEffect } from 'react';
+import { PreviewPage } from './TableIcons';
 
-const PostsTable = ({ delIcon, editIcon }) => {
+const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
   const { posts } = useContext(PostsContext);
   const { categories } = useContext(CategoryContext);
   const [postsWithNames, setPostsWithNames] = useState([]);
@@ -41,6 +42,7 @@ const PostsTable = ({ delIcon, editIcon }) => {
               <TableCell align="center">Category&nbsp;NAME</TableCell>
               <TableCell align="center">Edit</TableCell>
               <TableCell align="center"> Delete</TableCell>
+              <TableCell align="center"> View Page</TableCell>
             </TableRow>
           </TableHead>
 
@@ -55,6 +57,7 @@ const PostsTable = ({ delIcon, editIcon }) => {
                 <TableCell align="right">{post.categoryTitle}</TableCell>
                 <TableCell align="center">{(editIcon = <EditIcon />)}</TableCell>
                 <TableCell align="center">{(delIcon = <DeleteIcon />)}</TableCell>
+                <TableCell align="center">{(viewIcon = <PreviewPage recipeId={post._id} />)}</TableCell>
               </TableRow>
             ))}
           </TableBody>
