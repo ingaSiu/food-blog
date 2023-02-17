@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { CategoryContext } from '../../contexts/CategoryContext';
 import { FormikInput, FormikTextarea, FormikSelect } from './FormikInputs';
 import ButtonMain from '../Button';
+import { FormBackground, FormContainer, CloseBtnContainer, CloseBtn, BtnContainer } from './Form.styled';
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -18,7 +19,7 @@ const validationSchema = Yup.object().shape({
   categoryId: Yup.string().required('Required. Please choose a category'),
 });
 
-const CreateNewPost = () => {
+const CreateNewPost = ({ closeForm }) => {
   const { categories } = useContext(CategoryContext);
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     setTimeout(() => {
@@ -30,40 +31,49 @@ const CreateNewPost = () => {
   };
 
   return (
-    <div>
-      <Formik
-        initialValues={{
-          title: '',
-          imageUrl: '',
-          content: '',
-          categoryId: '',
-        }}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        {({ isSubmitting }) => (
-          <FormStyle>
-            <h1>Create a new post</h1>
-            <FormikInput name="title" placeholder="Post title" />
-            <FormikInput name="imageUrl" placeholder="Main image URL" />
-            <FormikTextarea name="content" placeholder="Write post content" />
-            <FormikSelect name="categoryId">
-              <option value="">Choose a category </option>
-              {categories &&
-                categories.map((item) => (
-                  <option key={item._id} value={item._id}>
-                    {item.title}
-                  </option>
-                ))}
-            </FormikSelect>
-
-            <ButtonMain type="submit" disabled={isSubmitting}>
-              Submit
-            </ButtonMain>
-          </FormStyle>
-        )}
-      </Formik>
-    </div>
+    <FormBackground>
+      <FormContainer>
+        <CloseBtnContainer>
+          <CloseBtn onClick={() => closeForm(false)}>X</CloseBtn>
+        </CloseBtnContainer>
+        <Formik
+          initialValues={{
+            title: '',
+            imageUrl: '',
+            content: '',
+            categoryId: '',
+          }}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          {({ isSubmitting }) => (
+            <FormStyle>
+              <h1>Create a new post</h1>
+              <FormikInput name="title" placeholder="Post title" />
+              <FormikInput name="imageUrl" placeholder="Main image URL" />
+              <FormikTextarea name="content" placeholder="Write post content" />
+              <FormikSelect name="categoryId">
+                <option value="">Choose a category </option>
+                {categories &&
+                  categories.map((item) => (
+                    <option key={item._id} value={item._id}>
+                      {item.title}
+                    </option>
+                  ))}
+              </FormikSelect>
+              <BtnContainer>
+                <ButtonMain type="submit" onClick={() => closeForm(false)}>
+                  Cancel
+                </ButtonMain>
+                <ButtonMain type="submit" disabled={isSubmitting}>
+                  Submit
+                </ButtonMain>
+              </BtnContainer>
+            </FormStyle>
+          )}
+        </Formik>
+      </FormContainer>
+    </FormBackground>
   );
 };
 

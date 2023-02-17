@@ -1,18 +1,32 @@
-import { TableWrapper } from '../../components/AdminPageTables/Table.styled';
+import { useState } from 'react';
+import { TableWrapper, TitleContainer } from '../../components/AdminPageTables/Table.styled';
 import CreateNewPost from '../../components/AdminPageForms/PostPostsForm';
-import { PostsContainer } from '../../components/styles/MainPage.styled';
+import { PostsPageContainer } from '../../components/AdminPageTables/Table.styled';
 import PostsTable from '../../components/AdminPageTables/PostsTable';
+import ButtonMain from '../../components/Button';
 
 const AdminPosts = () => {
+  const [openForm, setOpenForm] = useState(false);
+
   return (
-    <PostsContainer>
+    <PostsPageContainer>
       <TableWrapper>
-        <h1>All blog posts</h1>
+        <TitleContainer>
+          <h1>All blog posts</h1>
+          <ButtonMain
+            onClick={() => {
+              setOpenForm(true);
+            }}
+          >
+            Create a new post
+          </ButtonMain>
+        </TitleContainer>
+
         <PostsTable></PostsTable>
       </TableWrapper>
 
-      <CreateNewPost></CreateNewPost>
-    </PostsContainer>
+      {openForm && <CreateNewPost closeForm={setOpenForm} />}
+    </PostsPageContainer>
   );
 };
 
