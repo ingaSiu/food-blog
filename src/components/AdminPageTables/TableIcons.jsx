@@ -3,6 +3,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import PreviewIcon from '@mui/icons-material/Preview';
 import { Link, generatePath } from 'react-router-dom';
 import { RECIPE_PAGE_PATH } from '../../routes/const';
+import styled from 'styled-components';
+
 export const DelIcon = ({ onClick }) => {
   return (
     <>
@@ -22,9 +24,14 @@ export const EdIcon = ({ onClick }) => {
 export const PreviewPage = ({ recipeId }) => {
   return (
     <>
-      <Link to={generatePath(RECIPE_PAGE_PATH, (recipeId = { recipeId }))} target="_blank">
+      <LinkStyle to={generatePath(RECIPE_PAGE_PATH, (recipeId = { recipeId }))} target="_blank">
         <PreviewIcon />
-      </Link>
+      </LinkStyle>
     </>
   );
 };
+
+const LinkStyle = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
