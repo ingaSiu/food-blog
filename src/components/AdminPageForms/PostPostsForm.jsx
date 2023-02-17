@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { CategoryContext } from '../../contexts/CategoryContext';
-import { FormikInput } from './FormikInputs';
+import { FormikInput, FormikTextarea, FormikSelect } from './FormikInputs';
 import ButtonMain from '../Button';
 
 const validationSchema = Yup.object().shape({
@@ -46,8 +46,8 @@ const CreateNewPost = () => {
             <h1>Create a new post</h1>
             <FormikInput name="title" placeholder="Post title" />
             <FormikInput name="imageUrl" placeholder="Main image URL" />
-            <FormikInput as="textarea" name="content" placeholder="Write post content" />
-            <FormikInput as="select" name="categoryId">
+            <FormikTextarea name="content" placeholder="Write post content" />
+            <FormikSelect name="categoryId">
               <option value="">Choose a category </option>
               {categories &&
                 categories.map((item) => (
@@ -55,7 +55,7 @@ const CreateNewPost = () => {
                     {item.title}
                   </option>
                 ))}
-            </FormikInput>
+            </FormikSelect>
 
             <ButtonMain type="submit" disabled={isSubmitting}>
               Submit
@@ -75,5 +75,4 @@ const FormStyle = styled(Form)`
   padding: 10px;
   margin: 20px;
   gap: 20px;
-  border: 1px solid grey;
 `;
