@@ -12,7 +12,7 @@ export const TitleContainer = styled.div`
   width: 100%;
   justify-content: space-evenly;
 `;
-export const PostsPageContainer = styled.div`
+export const TablePageContainer = styled.div`
   display: flex;
   justify-content: center;
   margin: 0 auto;

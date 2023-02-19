@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { TableWrapper, TitleContainer } from '../../components/AdminPageTables/Table.styled';
 import CreateNewPost from '../../components/AdminPageForms/PostPostsForm';
-import { PostsPageContainer } from '../../components/AdminPageTables/Table.styled';
+import { TablePageContainer } from '../../components/AdminPageTables/Table.styled';
 import PostsTable from '../../components/AdminPageTables/PostsTable';
 import ButtonMain from '../../components/Button';
 
@@ -9,7 +9,7 @@ const AdminPosts = () => {
   const [openForm, setOpenForm] = useState(false);
 
   return (
-    <PostsPageContainer>
+    <TablePageContainer>
       <TableWrapper>
         <TitleContainer>
           <h1>All blog posts</h1>
@@ -26,7 +26,7 @@ const AdminPosts = () => {
       </TableWrapper>
 
       {openForm && <CreateNewPost closeForm={setOpenForm} />}
-    </PostsPageContainer>
+    </TablePageContainer>
   );
 };
 
