@@ -6,7 +6,7 @@ import { CategoryContext } from '../../contexts/CategoryContext';
 import { FormikInput, FormikTextarea, FormikSelect } from './FormikInputs';
 import ButtonMain from '../Button';
 import { FormBackground, FormContainer, CloseBtnContainer, CloseBtn, BtnContainer } from './Form.styled';
-
+import { usePostInsert } from '../../hooks/posts';
 const validationSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
   imageUrl: Yup.string()
@@ -21,13 +21,17 @@ const validationSchema = Yup.object().shape({
 
 const CreateNewPost = ({ closeForm }) => {
   const { categories } = useContext(CategoryContext);
+  const { mutateAsync: createPost } = usePostInsert();
+
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-      resetForm();
-    }, 2000);
+    console.log('SUBMIT POST');
     console.log(values);
+    createPost(values)
+      .then(() => {
+        setSubmitting(false);
+        resetForm();
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
