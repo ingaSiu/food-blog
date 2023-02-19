@@ -2,13 +2,12 @@ import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
-import { useContext } from 'react';
-import { CategoryContext } from '../contexts/CategoryContext';
+import { useAllCategoriesQuery } from '../hooks/categories';
 import { HOME_PATH, TRAVEL_PATH, ABOUT_ME_PATH } from '../routes/const';
 
 const MainLayout = ({ children }) => {
-  const { categories } = useContext(CategoryContext);
-
+  const { data } = useAllCategoriesQuery();
+  const categories = data || [];
   const links = [
     {
       path: HOME_PATH,

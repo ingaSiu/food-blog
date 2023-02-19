@@ -6,26 +6,26 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { useContext } from 'react';
-import { CategoryContext } from '../../contexts/CategoryContext';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useState, useEffect } from 'react';
 import { PreviewPage } from './TableIcons';
 import { useAllPostsQuery } from '../../hooks/posts';
-
+import { useAllCategoriesQuery } from '../../hooks/categories';
 const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
   const { data: posts } = useAllPostsQuery();
-  const { categories } = useContext(CategoryContext);
+  const { data: categories } = useAllCategoriesQuery();
   const [postsWithNames, setPostsWithNames] = useState([]);
 
   useEffect(() => {
     posts &&
       setPostsWithNames(
         posts.map((post) => {
-          const category = categories.find((cat) => {
-            return post.categoryId === cat._id;
-          });
+          const category =
+            categories &&
+            categories.find((cat) => {
+              return post.categoryId === cat._id;
+            });
           return { ...post, categoryTitle: category ? category.title : '' };
         }),
       );

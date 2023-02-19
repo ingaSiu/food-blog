@@ -6,12 +6,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { useContext } from 'react';
 import { DelIcon, EdIcon } from './TableIcons';
-import { CategoryContext } from '../../contexts/CategoryContext';
+import { useAllCategoriesQuery } from '../../hooks/categories';
 
 const CategoriesTable = ({ delIcon, editIcon }) => {
-  const { categories } = useContext(CategoryContext);
+  const { data } = useAllCategoriesQuery();
+  const categories = data || [];
 
   return (
     <TableContainer component={Paper}>

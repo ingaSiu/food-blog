@@ -1,12 +1,12 @@
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { useContext } from 'react';
 import styled from 'styled-components';
-import { CategoryContext } from '../../contexts/CategoryContext';
 import { FormikInput, FormikTextarea, FormikSelect } from './FormikInputs';
 import ButtonMain from '../Button';
 import { FormBackground, FormContainer, CloseBtnContainer, CloseBtn, BtnContainer } from './Form.styled';
 import { usePostInsert } from '../../hooks/posts';
+import { useAllCategoriesQuery } from '../../hooks/categories';
+
 const validationSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
   imageUrl: Yup.string()
@@ -20,8 +20,8 @@ const validationSchema = Yup.object().shape({
 });
 
 const CreateNewPost = ({ closeForm }) => {
-  const { categories } = useContext(CategoryContext);
   const { mutateAsync: createPost } = usePostInsert();
+  const { data: categories } = useAllCategoriesQuery();
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     console.log('SUBMIT POST');
@@ -56,6 +56,7 @@ const CreateNewPost = ({ closeForm }) => {
               <FormikInput name="title" placeholder="Post title" />
               <FormikInput name="imageUrl" placeholder="Main image URL" />
               <FormikTextarea name="content" placeholder="Write post content" />
+
               <FormikSelect name="categoryId">
                 <option value="">Choose a category </option>
                 {categories &&
@@ -66,9 +67,6 @@ const CreateNewPost = ({ closeForm }) => {
                   ))}
               </FormikSelect>
               <BtnContainer>
-                <ButtonMain type="submit" onClick={() => closeForm(false)}>
-                  Cancel
-                </ButtonMain>
                 <ButtonMain type="submit" disabled={isSubmitting}>
                   Submit
                 </ButtonMain>
