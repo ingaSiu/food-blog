@@ -30,3 +30,13 @@ export const getPostsByCategory = ({ queryKey }) => {
     return response.data;
   });
 };
+
+export const insertCategory = (category) => {
+  console.log(`START insertCat`);
+  console.log(`${ADMIN_CATEGORIES_URLS.insert}`);
+  return axios.post(`${ADMIN_CATEGORIES_URLS.insert}`, category).then((response) => {
+    console.log('SUCCESS insertPost');
+    console.log(response.data);
+    return response.data;
+  });
+};
