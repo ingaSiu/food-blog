@@ -8,26 +8,27 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useContext } from 'react';
 import { CategoryContext } from '../../contexts/CategoryContext';
-import { PostsContext } from '../../contexts/PostsContext';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useState, useEffect } from 'react';
 import { PreviewPage } from './TableIcons';
+import { useAllPostsQuery } from '../../hooks/posts';
 
 const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
-  const { posts } = useContext(PostsContext);
+  const { data: posts } = useAllPostsQuery();
   const { categories } = useContext(CategoryContext);
   const [postsWithNames, setPostsWithNames] = useState([]);
 
   useEffect(() => {
-    setPostsWithNames(
-      posts.map((post) => {
-        const category = categories.find((cat) => {
-          return post.categoryId === cat._id;
-        });
-        return { ...post, categoryTitle: category ? category.title : '' };
-      }),
-    );
+    posts &&
+      setPostsWithNames(
+        posts.map((post) => {
+          const category = categories.find((cat) => {
+            return post.categoryId === cat._id;
+          });
+          return { ...post, categoryTitle: category ? category.title : '' };
+        }),
+      );
   }, [posts, categories]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (

@@ -1,14 +1,8 @@
-import { PostsContext } from '../contexts/PostsContext';
-import { useContext } from 'react';
 import FoodCardMapping from './FoodCardMapping';
 import { PostsContainer } from '../components/styles/MainPage.styled';
+import { useAllPostsQuery } from '../hooks/posts';
 const Home = () => {
-  const { posts } = useContext(PostsContext);
-
-  return (
-    <PostsContainer>
-      <FoodCardMapping posts={posts} />
-    </PostsContainer>
-  );
+  const { data } = useAllPostsQuery();
+  return <PostsContainer>{<FoodCardMapping posts={data || []} />}</PostsContainer>;
 };
 export default Home;
