@@ -7,17 +7,17 @@ import styled from 'styled-components';
 
 export const DelIcon = ({ onClick }) => {
   return (
-    <>
+    <IconDiv>
       <DeleteIcon onClick={onClick} />
-    </>
+    </IconDiv>
   );
 };
 
 export const EdIcon = ({ onClick }) => {
   return (
-    <>
+    <IconDiv>
       <EditIcon onClick={onClick} />
-    </>
+    </IconDiv>
   );
 };
 
@@ -34,4 +34,8 @@ export const PreviewPage = ({ recipeId }) => {
 const LinkStyle = styled(Link)`
   text-decoration: none;
   color: black;
+`;
+
+const IconDiv = styled.div`
+  cursor: pointer;
 `;
