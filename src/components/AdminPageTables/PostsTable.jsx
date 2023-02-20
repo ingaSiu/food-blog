@@ -10,13 +10,24 @@ import { DelIcon, EdIcon } from './TableIcons';
 
 import { useState, useEffect } from 'react';
 import { PreviewPage } from './TableIcons';
-import { useAllPostsQuery } from '../../hooks/posts';
+import { useAllPostsQuery, useDeletePost } from '../../hooks/posts';
 import { useAllCategoriesQuery } from '../../hooks/categories';
 
 const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
   const { data: posts } = useAllPostsQuery();
   const { data: categories } = useAllCategoriesQuery();
   const [postsWithNames, setPostsWithNames] = useState([]);
+  const { mutateAsync: deletePost } = useDeletePost();
+
+  const clickDelete = (id) => {
+    if (window.confirm('Are you sure you want to delete this Post?')) {
+      deletePost(id)
+        .then(() => {
+          alert('item was deleted AFTER CALLING FN IN TABlE');
+        })
+        .catch((error) => console.log(error));
+    }
+  };
 
   useEffect(() => {
     posts &&
@@ -58,7 +69,7 @@ const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
                 <TableCell align="right">{post.categoryId}</TableCell>
                 <TableCell align="right">{post.categoryTitle}</TableCell>
                 <TableCell align="center">{(editIcon = <EdIcon onClick={() => alert('test ed')} />)}</TableCell>
-                <TableCell align="center">{(delIcon = <DelIcon onClick={() => alert('test del')} />)}</TableCell>
+                <TableCell align="center">{(delIcon = <DelIcon onClick={() => clickDelete(post._id)} />)}</TableCell>
                 <TableCell align="center">{(viewIcon = <PreviewPage recipeId={post._id} />)}</TableCell>
               </TableRow>
             ))}
@@ -70,3 +81,5 @@ const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
 };
 
 export default PostsTable;
+
+// onClick={() => { window.confirm( 'Are you sure you want to delete this Card?', ) && deleteCard(id) }}

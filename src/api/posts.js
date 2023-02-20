@@ -43,3 +43,9 @@ export const insertPost = (post) => {
     return response.data;
   });
 };
+
+export const deletePost = (id) => {
+  return axios.delete(`${ADMIN_URLS.delete}${id}`).then((response) => {
+    return alert('item was deleted IN AXIOS');
+  });
+};
