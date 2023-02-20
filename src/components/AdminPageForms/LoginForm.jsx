@@ -22,7 +22,8 @@ const LoginForm = () => {
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     login(values)
       .then(() => {
-        setAdmin(values);
+        alert('login success IN FORM');
+        setAdmin(values.key);
         navigate(ADMIN_POSTS_PATH);
       })
       .catch((error) => console.log(error));

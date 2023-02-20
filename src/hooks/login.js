@@ -4,6 +4,8 @@ import { adminLogin } from '../api/login';
 export const useLogin = () => {
   return useMutation({
     mutationFn: adminLogin,
-    onSuccess: () => {},
+    onSuccess: () => {
+      alert('log in in MUTATION');
+    },
   });
 };
