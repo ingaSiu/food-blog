@@ -1,12 +1,12 @@
-import { PostsProvider } from './PostsContext';
-import { CategoryProvider } from './CategoryContext';
+// import { PostsProvider } from './PostsContext';
+// import { CategoryProvider } from './CategoryContext';
 
-const ContextsProvider = ({ children }) => {
-  return (
-    <CategoryProvider>
-      <PostsProvider>{children}</PostsProvider>
-    </CategoryProvider>
-  );
-};
+// const ContextsProvider = ({ children }) => {
+//   return (
+//     <CategoryProvider>
+//       <PostsProvider>{children}</PostsProvider>
+//     </CategoryProvider>
+//   );
+// };
 
-export default ContextsProvider;
+// export default ContextsProvider;
