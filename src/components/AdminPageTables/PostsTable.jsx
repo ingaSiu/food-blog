@@ -6,12 +6,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+import { DelIcon, EdIcon } from './TableIcons';
+
 import { useState, useEffect } from 'react';
 import { PreviewPage } from './TableIcons';
 import { useAllPostsQuery } from '../../hooks/posts';
 import { useAllCategoriesQuery } from '../../hooks/categories';
+
 const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
   const { data: posts } = useAllPostsQuery();
   const { data: categories } = useAllCategoriesQuery();
@@ -56,8 +57,8 @@ const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
                 <TableCell align="right">{post._id}</TableCell>
                 <TableCell align="right">{post.categoryId}</TableCell>
                 <TableCell align="right">{post.categoryTitle}</TableCell>
-                <TableCell align="center">{(editIcon = <EditIcon />)}</TableCell>
-                <TableCell align="center">{(delIcon = <DeleteIcon />)}</TableCell>
+                <TableCell align="center">{(editIcon = <EdIcon onClick={() => alert('test ed')} />)}</TableCell>
+                <TableCell align="center">{(delIcon = <DelIcon onClick={() => alert('test del')} />)}</TableCell>
                 <TableCell align="center">{(viewIcon = <PreviewPage recipeId={post._id} />)}</TableCell>
               </TableRow>
             ))}

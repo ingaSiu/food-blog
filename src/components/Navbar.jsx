@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import logo from '../assets/images/logo.png';
 import { ButtonStyle, ButtonLink } from './styles/Button.styled';
-const Navbar = ({ links, homeLink, isAdmin }) => {
+
+const Navbar = ({ links, homeLink, isAdmin, onClick }) => {
   return (
     <>
       <NavbarContainer>
@@ -25,7 +26,9 @@ const Navbar = ({ links, homeLink, isAdmin }) => {
         {!isAdmin && <SearchBar />}
         {isAdmin && (
           <ButtonStyle>
-            <ButtonLink to={homeLink}>Logout</ButtonLink>
+            <ButtonLink to={homeLink} onClick={onClick}>
+              Logout
+            </ButtonLink>
           </ButtonStyle>
         )}
       </NavbarContainer>

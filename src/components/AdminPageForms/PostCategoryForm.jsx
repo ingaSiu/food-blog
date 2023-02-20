@@ -14,7 +14,7 @@ const CreateNewCategory = ({ closeForm }) => {
   const { mutateAsync: createCategory } = useCategoryInsert();
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    console.log('SUBMIT POST');
+    console.log('SUBMIT CAT');
     console.log(values);
     createCategory(values)
       .then(() => {
