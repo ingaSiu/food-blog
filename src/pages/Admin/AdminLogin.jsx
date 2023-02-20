@@ -1,5 +1,11 @@
+import LoginForm from '../../components/AdminPageForms/LoginForm';
+
 const AdminLogin = () => {
-  return <div>Admin</div>;
+  return (
+    <div>
+      <LoginForm />
+    </div>
+  );
 };
 
 export default AdminLogin;

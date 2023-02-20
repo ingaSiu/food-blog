@@ -1,7 +1,7 @@
 import { Route, Routes as RoutesWrapper } from 'react-router-dom';
 import { mainLayoutRoutes, adminLayoutRoutes } from './const';
 import AdminLogin from '../pages/Admin/AdminLogin';
-
+import { ADMIN_LOGIN_PATH } from './const';
 const Routes = () => {
   const { routes, Layout } = mainLayoutRoutes;
   const { adminRoutes, AdminLayout } = adminLayoutRoutes;
@@ -30,7 +30,7 @@ const Routes = () => {
           }
         />
       ))}
-      {/* <Route key={ADMIN_LOGIN_PATH} path={ADMIN_LOGIN_PATH} element={<AdminLogin />} /> */}
+      <Route key={ADMIN_LOGIN_PATH} path={ADMIN_LOGIN_PATH} element={<AdminLogin />} />
     </RoutesWrapper>
   );
 };
