@@ -1,8 +1,9 @@
 import { NavbarContainer, NavbarLink, NavbarLinkContainer, IconContainer, IconText } from './styles/Navbar.styled';
 import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar';
 import logo from '../assets/images/logo.png';
 import { ButtonStyle, ButtonLink } from './styles/Button.styled';
+import SearchBarComponent from './SearchBarComponent';
+import SearchBarInput from './SearchBarInput';
 
 const Navbar = ({ links, homeLink, isAdmin, onClick }) => {
   return (
@@ -23,7 +24,7 @@ const Navbar = ({ links, homeLink, isAdmin, onClick }) => {
           ))}
         </NavbarLinkContainer>
 
-        {!isAdmin && <SearchBar />}
+        {!isAdmin && <SearchBarComponent />}
         {isAdmin && (
           <ButtonStyle>
             <ButtonLink to={homeLink} onClick={onClick}>
