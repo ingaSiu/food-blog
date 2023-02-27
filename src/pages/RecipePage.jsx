@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 
 import { PageContainer } from '../components/styles/RecipeCard.styled';
 import { usePostQuery } from '../hooks/posts';
+import PostComment from '../components/AdminPageForms/PostComentForm';
+
 const RecipePage = () => {
   const { recipeId } = useParams();
 
@@ -19,6 +21,7 @@ const RecipePage = () => {
             content={recipeData.content}
           ></RecipeCard>
         )}
+        <PostComment postId={recipeId} />
       </PageContainer>
     </>
   );
