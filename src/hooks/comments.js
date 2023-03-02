@@ -1,5 +1,5 @@
-import { useQuery, useMutation } from 'react-query';
-import { getAllComments, createComment } from '../api/comments';
+import { createComment, getAllComments, getCommentsByPostId } from '../api/comments';
+import { useMutation, useQuery } from 'react-query';
 
 export const useCommentsQuery = () => {
   return useQuery('getComments', getAllComments);
@@ -15,4 +15,8 @@ export const useCreateComment = () => {
       console.log('comment error');
     },
   });
+};
+
+export const useGetCommentsByPostId = (id) => {
+  return useQuery(['getCommentsByPostId', id], getCommentsByPostId);
 };
