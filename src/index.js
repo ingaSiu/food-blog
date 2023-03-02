@@ -1,11 +1,12 @@
+import './index.css';
+
+import { AdminProvider } from './contexts/AdminContext';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { Toaster } from 'react-hot-toast';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import ContextsProvider from './contexts/ContextsProvider';
-import { AdminProvider } from './contexts/AdminContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
     <BrowserRouter>
       <AdminProvider>
         <App />
+        <Toaster position="bottom-left" />
       </AdminProvider>
     </BrowserRouter>
   </React.StrictMode>,
