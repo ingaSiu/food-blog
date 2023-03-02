@@ -1,10 +1,12 @@
-import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import styled from 'styled-components';
 
+import { Form, Formik } from 'formik';
 import { FormikInput, FormikTextarea } from './FormikInputs';
+
 import ButtonMain from '../Button';
-import { FormContainer } from './Form.styled';
+import { CommentFormContainer } from './Form.styled';
+import styled from 'styled-components';
+import { toast } from 'react-hot-toast';
 import { useCreateComment } from '../../hooks/comments';
 
 const validationSchema = Yup.object().shape({
@@ -22,13 +24,14 @@ const PostComment = ({ postId }) => {
     createComment(commentValues)
       .then(() => {
         setSubmitting(false);
+        toast.success('Comment posted!');
         resetForm();
       })
-      .catch((error) => console.log(error));
+      .catch((error) => toast.error('Failed to post comment'));
   };
 
   return (
-    <FormContainer>
+    <CommentFormContainer>
       <Formik
         initialValues={{
           userName: '',
@@ -39,17 +42,17 @@ const PostComment = ({ postId }) => {
       >
         {({ isSubmitting }) => (
           <FormStyle>
-            <h1>Write a comment</h1>
+            <h2>Write a comment</h2>
             <FormikInput name="userName" placeholder="Please write your name" />
             <FormikTextarea name="content" placeholder="Write your comment" />
 
             <ButtonMain type="submit" disabled={isSubmitting}>
-              Submit
+              Post Comment
             </ButtonMain>
           </FormStyle>
         )}
       </Formik>
-    </FormContainer>
+    </CommentFormContainer>
   );
 };
 
