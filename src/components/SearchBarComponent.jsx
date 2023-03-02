@@ -1,11 +1,12 @@
+import { Link, generatePath } from 'react-router-dom';
+
+import { ContentContainer } from './styles/SearchBar.styled';
+import { Popover } from 'react-tiny-popover';
+import { RECIPE_PAGE_PATH } from '../routes/const';
+import SearchBarInput from './SearchBarInput';
 import { useAllPostsQuery } from '../hooks/posts';
 import { useState } from 'react';
-import SearchBarInput from './SearchBarInput';
-import { Popover } from 'react-tiny-popover';
-import { generatePath, Link } from 'react-router-dom';
-import { ContentContainer } from './styles/SearchBar.styled';
-import { RECIPE_PAGE_PATH } from '../routes/const';
-import styled from 'styled-components';
+
 const SearchBarComponent = () => {
   const [search, setSearch] = useState('');
   const { data } = useAllPostsQuery();

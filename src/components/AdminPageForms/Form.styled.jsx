@@ -20,6 +20,15 @@ export const FormContainer = styled.div`
   padding: 25px;
 `;
 
+export const CommentFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+  }
+`;
+
 export const CloseBtnContainer = styled.div`
   display: flex;
   justify-content: flex-end;
