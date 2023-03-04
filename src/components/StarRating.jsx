@@ -1,13 +1,13 @@
 import Rating from '@mui/material/Rating';
 import styled from 'styled-components';
 
-const StarRating = () => {
+const StarRating = ({ ratingCount }) => {
   return (
     <RatingWrapper>
       <p>Rate this recipe!</p>
       <RatingContainer>
         <Rating name="size-large" defaultValue={1} size="large" />
-        <p>Total score:</p>
+        <p>Total score: {ratingCount}</p>
       </RatingContainer>
     </RatingWrapper>
   );
