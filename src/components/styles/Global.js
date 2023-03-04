@@ -12,6 +12,10 @@ body {
   font-family: 'Lato', sans-serif;
   
 }
+input, textarea, select {
+  box-sizing: border-box;
+}
+
 h1 {
   margin: 0;
 }

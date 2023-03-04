@@ -1,9 +1,10 @@
-import { NavbarContainer, NavbarLink, NavbarLinkContainer, IconContainer, IconText } from './styles/Navbar.styled';
+import { ButtonLink, ButtonStyle } from './styles/Button.styled';
+import { IconContainer, IconText, NavbarContainer, NavbarLink, NavbarLinkContainer } from './styles/Navbar.styled';
+
 import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo.png';
-import { ButtonStyle, ButtonLink } from './styles/Button.styled';
 import SearchBarComponent from './SearchBarComponent';
 import SearchBarInput from './SearchBarInput';
+import logo from '../assets/images/logo.png';
 
 const Navbar = ({ links, homeLink, isAdmin, onClick }) => {
   return (
@@ -26,11 +27,9 @@ const Navbar = ({ links, homeLink, isAdmin, onClick }) => {
 
         {!isAdmin && <SearchBarComponent />}
         {isAdmin && (
-          <ButtonStyle>
-            <ButtonLink to={homeLink} onClick={onClick}>
-              Logout
-            </ButtonLink>
-          </ButtonStyle>
+          <ButtonLink to={homeLink} onClick={onClick}>
+            <ButtonStyle>Logout</ButtonStyle>
+          </ButtonLink>
         )}
       </NavbarContainer>
     </>
