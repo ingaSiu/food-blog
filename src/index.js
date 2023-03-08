@@ -1,5 +1,3 @@
-import './index.css';
-
 import { AdminProvider } from './contexts/AdminContext';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
