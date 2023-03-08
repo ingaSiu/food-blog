@@ -11,6 +11,8 @@ export const FoodCardStyle = styled.div`
     color: black;
     width: 600px;
     margin-bottom: 30px;
+    padding-top: 25px;
+    border-top: 1px solid grey;
   }
   img {
     width: 700px;

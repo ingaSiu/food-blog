@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const NavbarContainer = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ export const NavbarContainer = styled.div`
   border-bottom: 1px solid #f4f4f4;
   justify-content: space-around;
   margin-top: 10px;
-  margin-bottom: 40px;
+  /* margin-bottom: 20px; */
   //padding-bottom: 40px;
 `;
 

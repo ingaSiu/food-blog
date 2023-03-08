@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 15px 30px;
   margin-left: 30px;
 `;

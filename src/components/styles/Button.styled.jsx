@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const ButtonStyle = styled.button`
   border: 1px solid #f4f4f4;
@@ -19,7 +19,4 @@ export const ButtonLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   color: #b46b2b;
-  &:hover {
-    color: inherit;
-  }
 `;
