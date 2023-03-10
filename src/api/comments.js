@@ -1,6 +1,6 @@
 import { BASE_ADMIN_URL, BASE_PUBLIC_URL } from './baseApi';
 
-import axios from 'axios';
+import httpClient from './httpClient';
 
 const PUBLIC_COMMENTS_URLS = {
   getComments: `${BASE_PUBLIC_URL}comments`,
@@ -14,7 +14,7 @@ const ADMIN_COMMENTS_URLS = {
 };
 
 export const getAllComments = () => {
-  return axios.get(PUBLIC_COMMENTS_URLS.getComments).then((response) => {
+  return httpClient.get(PUBLIC_COMMENTS_URLS.getComments).then((response) => {
     return response.data;
   });
 };
@@ -23,13 +23,13 @@ export const getCommentsByPostId = ({ queryKey }) => {
   const id = queryKey[1];
   console.log('START get all comments by id');
   console.log(`${PUBLIC_COMMENTS_URLS.getCommentsByPostId}${id}`);
-  return axios.get(`${PUBLIC_COMMENTS_URLS.getCommentsByPostId}${id}`).then((response) => {
+  return httpClient.get(`${PUBLIC_COMMENTS_URLS.getCommentsByPostId}${id}`).then((response) => {
     return response.data;
   });
 };
 
 export const createComment = (comment) => {
-  return axios.post(`${PUBLIC_COMMENTS_URLS.postComment}`, comment).then((response) => {
+  return httpClient.post(`${PUBLIC_COMMENTS_URLS.postComment}`, comment).then((response) => {
     return response.data;
   });
 };

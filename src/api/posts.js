@@ -1,5 +1,6 @@
-import axios from 'axios';
-import { BASE_PUBLIC_URL, BASE_ADMIN_URL } from './baseApi';
+import { BASE_ADMIN_URL, BASE_PUBLIC_URL } from './baseApi';
+
+import httpClient from './httpClient';
 
 const PUBLIC_URLS = {
   getAll: `${BASE_PUBLIC_URL}posts`,
@@ -16,7 +17,7 @@ const ADMIN_URLS = {
 export const getAllPosts = () => {
   console.log('START getAllPosts');
   console.log(PUBLIC_URLS.getAll);
-  return axios.get(PUBLIC_URLS.getAll).then((response) => {
+  return httpClient.get(PUBLIC_URLS.getAll).then((response) => {
     console.log('SUCCESS getAllPosts');
     console.log(response.data);
     return response.data;
@@ -27,7 +28,7 @@ export const getPost = ({ queryKey }) => {
   const id = queryKey[1];
   console.log(`START getPost ${id}`);
   console.log(`${PUBLIC_URLS.getOne}${id}`);
-  return axios.get(`${PUBLIC_URLS.getOne}${id}`).then((response) => {
+  return httpClient.get(`${PUBLIC_URLS.getOne}${id}`).then((response) => {
     console.log('SUCCESS getPost');
     console.log(response.data);
     return response.data;
@@ -37,7 +38,7 @@ export const getPost = ({ queryKey }) => {
 export const insertPost = (post) => {
   console.log(`START insertPost`);
   console.log(`${ADMIN_URLS.insert}`);
-  return axios.post(`${ADMIN_URLS.insert}`, post).then((response) => {
+  return httpClient.post(`${ADMIN_URLS.insert}`, post).then((response) => {
     console.log('SUCCESS insertPost');
     console.log(response.data);
     return response.data;
@@ -45,7 +46,7 @@ export const insertPost = (post) => {
 };
 
 export const deletePost = (id) => {
-  return axios.delete(`${ADMIN_URLS.delete}${id}`).then((response) => {
-    return alert('item was deleted IN AXIOS');
+  return httpClient.delete(`${ADMIN_URLS.delete}${id}`).then((response) => {
+    return alert('item was deleted IN httpClient');
   });
 };
