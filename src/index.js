@@ -1,6 +1,6 @@
 import { AdminProvider } from './contexts/AdminContext';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Toaster } from 'react-hot-toast';
@@ -9,12 +9,12 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <AdminProvider>
         <App />
         <Toaster position="bottom-left" />
       </AdminProvider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 );
 

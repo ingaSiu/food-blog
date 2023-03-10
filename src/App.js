@@ -1,6 +1,7 @@
-import Routes from './routes/Routes';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
 import GlobalStyles from './components/styles/Global';
-import { QueryClientProvider, QueryClient } from 'react-query';
+import Routes from './routes/Routes';
 
 export const queryClient = new QueryClient();
 
