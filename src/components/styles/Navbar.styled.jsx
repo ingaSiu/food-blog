@@ -10,8 +10,6 @@ export const NavbarContainer = styled.div`
   border-bottom: 1px solid #f4f4f4;
   justify-content: space-around;
   margin-top: 10px;
-  /* margin-bottom: 20px; */
-  //padding-bottom: 40px;
 `;
 
 export const NavbarLinkContainer = styled.div`

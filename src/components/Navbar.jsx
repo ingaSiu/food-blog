@@ -3,7 +3,6 @@ import { IconContainer, IconText, NavbarContainer, NavbarLink, NavbarLinkContain
 
 import { Link } from 'react-router-dom';
 import SearchBarComponent from './SearchBarComponent';
-import SearchBarInput from './SearchBarInput';
 import logo from '../assets/images/logo.png';
 
 const Navbar = ({ links, homeLink, isAdmin, onClick }) => {
