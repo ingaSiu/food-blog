@@ -1,16 +1,18 @@
 import * as React from 'react';
+
+import { DelIcon, EdIcon } from './TableIcons';
+import { useAllPostsQuery, useDeletePost } from '../../hooks/posts';
+import { useEffect, useState } from 'react';
+
+import Paper from '@mui/material/Paper';
+import { PreviewPage } from './TableIcons';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { DelIcon, EdIcon } from './TableIcons';
-
-import { useState, useEffect } from 'react';
-import { PreviewPage } from './TableIcons';
-import { useAllPostsQuery, useDeletePost } from '../../hooks/posts';
+import { toast } from 'react-hot-toast';
 import { useAllCategoriesQuery } from '../../hooks/categories';
 
 const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
@@ -24,6 +26,7 @@ const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
       deletePost(id)
         .then(() => {
           alert('item was deleted AFTER CALLING FN IN TABlE');
+          toast.success('Selected post was deleted succesfully!');
         })
         .catch((error) => console.log(error));
     }

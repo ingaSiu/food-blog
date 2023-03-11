@@ -1,11 +1,14 @@
-import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import styled from 'styled-components';
-import { FormikInput, FormikTextarea, FormikSelect } from './FormikInputs';
+
+import { BtnContainer, CloseBtn, CloseBtnContainer, FormBackground, FormContainer } from './Form.styled';
+import { Form, Formik } from 'formik';
+import { FormikInput, FormikSelect, FormikTextarea } from './FormikInputs';
+
 import ButtonMain from '../Button';
-import { FormBackground, FormContainer, CloseBtnContainer, CloseBtn, BtnContainer } from './Form.styled';
-import { usePostInsert } from '../../hooks/posts';
+import styled from 'styled-components';
+import { toast } from 'react-hot-toast';
 import { useAllCategoriesQuery } from '../../hooks/categories';
+import { usePostInsert } from '../../hooks/posts';
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -29,6 +32,7 @@ const CreateNewPost = ({ closeForm }) => {
     createPost(values)
       .then(() => {
         setSubmitting(false);
+        toast.success('New recipe post created!');
         resetForm();
       })
       .catch((error) => console.log(error));

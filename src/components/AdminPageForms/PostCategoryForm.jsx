@@ -1,11 +1,14 @@
-import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import styled from 'styled-components';
 
-import { FormikInput } from './FormikInputs';
+import { BtnContainer, CloseBtn, CloseBtnContainer, FormBackground, FormContainer } from './Form.styled';
+import { Form, Formik } from 'formik';
+
 import ButtonMain from '../Button';
-import { FormBackground, FormContainer, CloseBtnContainer, CloseBtn, BtnContainer } from './Form.styled';
+import { FormikInput } from './FormikInputs';
+import styled from 'styled-components';
+import { toast } from 'react-hot-toast';
 import { useCategoryInsert } from '../../hooks/categories';
+
 const validationSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
 });
@@ -19,6 +22,7 @@ const CreateNewCategory = ({ closeForm }) => {
     createCategory(values)
       .then(() => {
         setSubmitting(false);
+        toast.success('New category created!');
         resetForm();
       })
       .catch((error) => console.log(error));
