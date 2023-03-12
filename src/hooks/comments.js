@@ -22,7 +22,7 @@ export const useGetCommentsByPostId = (id) => {
     queryKey: ['getCommentsByPostId', id],
     queryFn: getCommentsByPostId,
     initialData:
-      process.env.REACT_APP_FALLBACK_MODE.toLowerCase === 'true'
+      process.env.REACT_APP_FALLBACK_MODE.toLowerCase() === 'true'
         ? require(`../api/fallbackData/getCommentsByPostId_${id}.json`)
         : [],
   });

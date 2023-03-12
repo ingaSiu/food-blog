@@ -8,7 +8,7 @@ export const useAllCategoriesQuery = () => {
     queryKey: 'getAllCategories',
     queryFn: getAllCategories,
     initialData:
-      process.env.REACT_APP_FALLBACK_MODE.toLowerCase === 'true'
+      process.env.REACT_APP_FALLBACK_MODE.toLowerCase() === 'true'
         ? require('../api/fallbackData/getCategories.json')
         : [],
   });
@@ -19,7 +19,7 @@ export const usePostsByCategory = (id) => {
     queryKey: ['getAllPostsByCategory', id],
     queryFn: getPostsByCategory,
     initialData:
-      process.env.REACT_APP_FALLBACK_MODE.toLowerCase === 'true'
+      process.env.REACT_APP_FALLBACK_MODE.toLowerCase() === 'true'
         ? require(`../api/fallbackData/getPostsByCategoryId_${id}.json`)
         : [],
   });
