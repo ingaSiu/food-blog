@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/food-blog/static/js/main.7db0be0a.js",
+    "main.js": "/food-blog/static/js/main.528a8741.js",
     "static/js/787.e07e5e9c.chunk.js": "/food-blog/static/js/787.e07e5e9c.chunk.js",
     "static/media/gloriaHallelujah.woff2": "/food-blog/static/media/gloriaHallelujah.46e5af6a235f8f3ecbc4.woff2",
     "static/media/logo.png": "/food-blog/static/media/logo.ee8451880ba6b291aa36.png",
     "static/media/lato.woff2": "/food-blog/static/media/lato.361f3dbb9db6a5980326.woff2",
     "index.html": "/food-blog/index.html",
-    "main.7db0be0a.js.map": "/food-blog/static/js/main.7db0be0a.js.map",
+    "main.528a8741.js.map": "/food-blog/static/js/main.528a8741.js.map",
     "787.e07e5e9c.chunk.js.map": "/food-blog/static/js/787.e07e5e9c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.7db0be0a.js"
+    "static/js/main.528a8741.js"
   ]
 }
