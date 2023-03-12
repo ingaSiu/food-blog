@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "63df7d00d336457c856d48ec",
+    "title": "First post edited",
+    "imageUrl": "https://www.biggerbolderbaking.com/wp-content/uploads/2021/02/New-York-Style-Pizza-Thumbnail1-scaled.jpg",
+    "categoryId": "63df89470f48be4e28734634",
+    "createdAt": 1675590912997,
+    "updatedAt": 1675681435606
+  },
+  {
+    "_id": "63e134b6c2586706326ad135",
+    "title": "Pasta with paprika and bacon",
+    "imageUrl": "https://s3.amazonaws.com/img.kh-labs.com/MeArGu5d52bf1f7a0387.43018128",
+    "categoryId": "63df89470f48be4e28734634",
+    "createdAt": 1675703478528,
+    "updatedAt": 1675703478528
+  },
+  {
+    "_id": "63e134ccc2586706326ad136",
+    "title": "Pasta with paprika and bacon",
+    "imageUrl": "https://s3.amazonaws.com/img.kh-labs.com/MeArGu5d52bf1f7a0387.43018128",
+    "categoryId": "63df89470f48be4e28734634",
+    "createdAt": 1675703500641,
+    "updatedAt": 1675703500641
+  }
+]

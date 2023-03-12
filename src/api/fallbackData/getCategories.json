@@ -1,0 +1,56 @@
+[
+  {
+    "_id": "63df89470f48be4e28734634",
+    "title": "First category",
+    "createdAt": 1675594055518,
+    "updatedAt": 1675594055518
+  },
+  {
+    "_id": "63e4caa802ba564c619795d3",
+    "title": "Sweet",
+    "createdAt": 1675938472666,
+    "updatedAt": 1675955324743
+  },
+  {
+    "_id": "63e50c935f9f47670e6509c5",
+    "title": "Chicken",
+    "createdAt": 1675955347328,
+    "updatedAt": 1675955347328
+  },
+  {
+    "_id": "63e50c995f9f47670e6509c6",
+    "title": "Beef",
+    "createdAt": 1675955353463,
+    "updatedAt": 1675955353463
+  },
+  {
+    "_id": "63e50ca15f9f47670e6509c7",
+    "title": "Pasta",
+    "createdAt": 1675955361459,
+    "updatedAt": 1675955361459
+  },
+  {
+    "_id": "63e50ca95f9f47670e6509c8",
+    "title": "Soups",
+    "createdAt": 1675955369814,
+    "updatedAt": 1675955369814
+  },
+  {
+    "_id": "63e50cbc5f9f47670e6509c9",
+    "title": "Snacks",
+    "createdAt": 1675955388234,
+    "updatedAt": 1675955388234
+  },
+  {
+    "_id": "63f24a0d09d1478c0a07689f",
+    "title": "Breakfast",
+    "createdAt": 1676823053484,
+    "updatedAt": 1676823053484
+  },
+  {
+    "_id": "63fcf3054b97e4031412ddad",
+    "title": "Dinner",
+    "createdAt": 1677521669457,
+    "updatedAt": 1677521669457
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "_id": "63e62bfbf4cbfd113574f3c1",
+  "title": "Beef burger",
+  "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/beef_burger_main.jpg",
+  "content": "<p>Burger is easy and comforting dish. The variation of burger toppings is endless. Here I present my favourite version.</p><img src='https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/beef_burger_another.jpg'/><h4>Ingredients:</h4><ul><li>Burger buns</li><li>Beef patty</li><li>Cheddar</li><li>Sauce (mayo, BBQ sauce, mustard)</li><li>Thinly sliced red onion</li><li>Tomato, rucolla, dill pickles</li></ul><h4>Making instructions:</h4><ol><li>Fry the patty , put on cheddar to melt&nbsp;</li><li>Mix the sauce ingredients</li><li>Toast the buns</li><li>Assemble burger: put on veggies, patty, sauce</li></ol>",
+  "categoryId": "63e50c995f9f47670e6509c6",
+  "rating": 0,
+  "ratingCount": 0,
+  "createdAt": 1676028923206,
+  "updatedAt": 1676028923206
+}

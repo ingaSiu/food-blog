@@ -1,0 +1,11 @@
+{
+  "_id": "63df7d00d336457c856d48ec",
+  "title": "First post edited",
+  "imageUrl": "https://www.biggerbolderbaking.com/wp-content/uploads/2021/02/New-York-Style-Pizza-Thumbnail1-scaled.jpg",
+  "content": "<h1>Some content</h1><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK9jWn6YHJq8CN3KdybzMS3X4hMWpdBhuqhDTwM_WcrQ&s' alt='some doggo'>",
+  "categoryId": "63df89470f48be4e28734634",
+  "rating": 1.6666666666666667,
+  "ratingCount": 3,
+  "createdAt": 1675590912997,
+  "updatedAt": 1675681435606
+}

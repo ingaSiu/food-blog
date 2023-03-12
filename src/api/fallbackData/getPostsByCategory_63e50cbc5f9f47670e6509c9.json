@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "63e633e8f4cbfd113574f3c2",
+    "title": "Cubanos",
+    "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/cubanos_main.jpg",
+    "categoryId": "63e50cbc5f9f47670e6509c9",
+    "createdAt": 1676030952904,
+    "updatedAt": 1676030952904
+  },
+  {
+    "_id": "63f204d209d1478c0a07689d",
+    "title": "Edamame",
+    "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/20230127_202124.jpg",
+    "categoryId": "63e50cbc5f9f47670e6509c9",
+    "createdAt": 1676805330649,
+    "updatedAt": 1676805330649
+  }
+]

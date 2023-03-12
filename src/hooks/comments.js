@@ -18,5 +18,11 @@ export const useCreateComment = () => {
 };
 
 export const useGetCommentsByPostId = (id) => {
-  return useQuery(['getCommentsByPostId', id], getCommentsByPostId);
+  return useQuery({
+    queryKey: ['getCommentsByPostId', id],
+    queryFn: getCommentsByPostId,
+    initialData: process.env.REACT_APP_FALLBACK_MODE
+      ? require(`../api/fallbackData/getCommentsByPostId_${id}.json`)
+      : [],
+  });
 };

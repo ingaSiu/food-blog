@@ -1,0 +1,10 @@
+[
+  {
+    "_id": "63e62bfbf4cbfd113574f3c1",
+    "title": "Beef burger",
+    "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/beef_burger_main.jpg",
+    "categoryId": "63e50c995f9f47670e6509c6",
+    "createdAt": 1676028923206,
+    "updatedAt": 1676028923206
+  }
+]

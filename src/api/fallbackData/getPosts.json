@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "63df7d00d336457c856d48ec",
+    "title": "First post edited",
+    "imageUrl": "https://www.biggerbolderbaking.com/wp-content/uploads/2021/02/New-York-Style-Pizza-Thumbnail1-scaled.jpg",
+    "categoryId": "63df89470f48be4e28734634",
+    "createdAt": 1675590912997,
+    "updatedAt": 1675681435606
+  },
+  {
+    "_id": "63e134b6c2586706326ad135",
+    "title": "Pasta with paprika and bacon",
+    "imageUrl": "https://s3.amazonaws.com/img.kh-labs.com/MeArGu5d52bf1f7a0387.43018128",
+    "categoryId": "63df89470f48be4e28734634",
+    "createdAt": 1675703478528,
+    "updatedAt": 1675703478528
+  },
+  {
+    "_id": "63e134ccc2586706326ad136",
+    "title": "Pasta with paprika and bacon",
+    "imageUrl": "https://s3.amazonaws.com/img.kh-labs.com/MeArGu5d52bf1f7a0387.43018128",
+    "categoryId": "63df89470f48be4e28734634",
+    "createdAt": 1675703500641,
+    "updatedAt": 1675703500641
+  },
+  {
+    "_id": "63e61f55f4cbfd113574f3bf",
+    "title": "Chicken curry",
+    "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/chisken_curry_main.jpg",
+    "categoryId": "63e50c935f9f47670e6509c5",
+    "createdAt": 1676025685776,
+    "updatedAt": 1676025904982
+  },
+  {
+    "_id": "63e622e6f4cbfd113574f3c0",
+    "title": "Tonkatsu ramen",
+    "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/tonkatsu_main.jpg",
+    "categoryId": "63e50ca95f9f47670e6509c8",
+    "createdAt": 1676026598129,
+    "updatedAt": 1676026598129
+  },
+  {
+    "_id": "63e62bfbf4cbfd113574f3c1",
+    "title": "Beef burger",
+    "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/beef_burger_main.jpg",
+    "categoryId": "63e50c995f9f47670e6509c6",
+    "createdAt": 1676028923206,
+    "updatedAt": 1676028923206
+  },
+  {
+    "_id": "63e633e8f4cbfd113574f3c2",
+    "title": "Cubanos",
+    "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/cubanos_main.jpg",
+    "categoryId": "63e50cbc5f9f47670e6509c9",
+    "createdAt": 1676030952904,
+    "updatedAt": 1676030952904
+  },
+  {
+    "_id": "63f204d209d1478c0a07689d",
+    "title": "Edamame",
+    "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/20230127_202124.jpg",
+    "categoryId": "63e50cbc5f9f47670e6509c9",
+    "createdAt": 1676805330649,
+    "updatedAt": 1676805330649
+  }
+]

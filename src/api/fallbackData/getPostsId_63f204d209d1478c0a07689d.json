@@ -1,0 +1,11 @@
+{
+  "_id": "63f204d209d1478c0a07689d",
+  "title": "Edamame",
+  "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/20230127_202124.jpg",
+  "content": "test",
+  "categoryId": "63e50cbc5f9f47670e6509c9",
+  "rating": 0,
+  "ratingCount": 0,
+  "createdAt": 1676805330649,
+  "updatedAt": 1676805330649
+}

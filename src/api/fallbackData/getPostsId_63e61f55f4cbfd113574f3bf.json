@@ -1,0 +1,11 @@
+{
+  "_id": "63e61f55f4cbfd113574f3bf",
+  "title": "Chicken curry",
+  "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/chisken_curry_main.jpg",
+  "content": "<p>Chicken curry is fast and delicious weeknight dish. You can easily adjust spiciness level. It has well balanced flavours.&nbsp;</p> <img src='https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/chincken_curry_another.jpg' /> <h4>Ingredients:</h4> <ul> <li>Chicken breast 500g</li> <li>Canned Tomatoes 1 400g can</li> <li>Ginger</li> <li>Yellow onion</li> <li>Garlic</li> <li>Garam masala spice mix</li> <li>Basmati rice</li> <li>Fresh coliander, lemon for garnishing</li> </ul> <h4>Instructions:</h4> <ol> <li>Slice the chicken to pieces, marinate it in garam masala.</li> <li>Grate ginger and garlic. Cut inion into cubes.</li> <li>Fry chicken, add onion, ginger and garlic paste.</li> <li>Put in the tomatoes. Cook for 20 minutes.</li> <li>In meantime boil rice.</li> <li>Serve with rice, garnish with lemon and cilantro.&nbsp;</li> </ol>",
+  "categoryId": "63e50c935f9f47670e6509c5",
+  "rating": 0,
+  "ratingCount": 0,
+  "createdAt": 1676025685776,
+  "updatedAt": 1676025904982
+}

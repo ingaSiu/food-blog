@@ -1,0 +1,10 @@
+[
+  {
+    "_id": "63e61f55f4cbfd113574f3bf",
+    "title": "Chicken curry",
+    "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/chisken_curry_main.jpg",
+    "categoryId": "63e50c935f9f47670e6509c5",
+    "createdAt": 1676025685776,
+    "updatedAt": 1676025904982
+  }
+]

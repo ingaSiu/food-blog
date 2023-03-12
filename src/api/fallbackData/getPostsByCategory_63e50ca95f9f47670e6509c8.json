@@ -1,0 +1,10 @@
+[
+  {
+    "_id": "63e622e6f4cbfd113574f3c0",
+    "title": "Tonkatsu ramen",
+    "imageUrl": "https://raw.githubusercontent.com/ingaSiu/food-blog-assets/main/food-images/tonkatsu_main.jpg",
+    "categoryId": "63e50ca95f9f47670e6509c8",
+    "createdAt": 1676026598129,
+    "updatedAt": 1676026598129
+  }
+]

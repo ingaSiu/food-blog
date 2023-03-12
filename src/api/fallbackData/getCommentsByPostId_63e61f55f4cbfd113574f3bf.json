@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "63fcf4f74b97e4031412ddaf",
+    "postId": "63e61f55f4cbfd113574f3bf",
+    "userName": "Yuna",
+    "content": "sdfsdf",
+    "createdAt": 1677522167791,
+    "updatedAt": 1677522167791
+  },
+  {
+    "_id": "640096f985a7f868816f9d32",
+    "postId": "63e61f55f4cbfd113574f3bf",
+    "userName": "Neko",
+    "content": "The best weeknight meal",
+    "createdAt": 1677760249594,
+    "updatedAt": 1677760249594
+  },
+  {
+    "_id": "6400978a85a7f868816f9d34",
+    "postId": "63e61f55f4cbfd113574f3bf",
+    "userName": "Nynapero",
+    "content": "The best ",
+    "createdAt": 1677760394153,
+    "updatedAt": 1677760394153
+  },
+  {
+    "_id": "6400b23285a7f868816f9d36",
+    "postId": "63e61f55f4cbfd113574f3bf",
+    "userName": "Perorin",
+    "content": "Good and cheap",
+    "createdAt": 1677767218385,
+    "updatedAt": 1677767218385
+  },
+  {
+    "_id": "640c9ee688847e69f071e27f",
+    "postId": "63e61f55f4cbfd113574f3bf",
+    "userName": "Akita Chan",
+    "content": "Love it with some fresh coriander",
+    "createdAt": 1678548710373,
+    "updatedAt": 1678548710373
+  }
+]
