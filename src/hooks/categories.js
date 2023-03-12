@@ -20,7 +20,7 @@ export const usePostsByCategory = (id) => {
     queryFn: getPostsByCategory,
     initialData:
       process.env.REACT_APP_FALLBACK_MODE.toLowerCase() === 'true'
-        ? require(`../api/fallbackData/getPostsByCategoryId_${id}.json`)
+        ? require(`../api/fallbackData/getPostsByCategory_${id}.json`)
         : [],
   });
 };
