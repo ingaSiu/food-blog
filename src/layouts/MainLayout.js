@@ -1,9 +1,11 @@
+import { ABOUT_ME_PATH, HOME_PATH, TRAVEL_PATH } from '../routes/const';
+
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import Footer from '../components/Footer';
 import styled from 'styled-components';
 import { useAllCategoriesQuery } from '../hooks/categories';
-import { HOME_PATH, TRAVEL_PATH, ABOUT_ME_PATH } from '../routes/const';
+import { useEffect } from 'react';
 
 const MainLayout = ({ children }) => {
   const { data } = useAllCategoriesQuery();
@@ -22,6 +24,10 @@ const MainLayout = ({ children }) => {
       title: 'ABOUT ME',
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [children]);
 
   return (
     <>
