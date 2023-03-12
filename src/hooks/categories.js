@@ -7,7 +7,10 @@ export const useAllCategoriesQuery = () => {
   return useQuery({
     queryKey: 'getAllCategories',
     queryFn: getAllCategories,
-    initialData: process.env.REACT_APP_FALLBACK_MODE ? require('../api/fallbackData/getCategories.json') : [],
+    initialData:
+      process.env.REACT_APP_FALLBACK_MODE.toLowerCase === 'true'
+        ? require('../api/fallbackData/getCategories.json')
+        : [],
   });
 };
 
@@ -15,9 +18,10 @@ export const usePostsByCategory = (id) => {
   return useQuery({
     queryKey: ['getAllPostsByCategory', id],
     queryFn: getPostsByCategory,
-    initialData: process.env.REACT_APP_FALLBACK_MODE
-      ? require(`../api/fallbackData/getPostsByCategoryId_${id}.json`)
-      : [],
+    initialData:
+      process.env.REACT_APP_FALLBACK_MODE.toLowerCase === 'true'
+        ? require(`../api/fallbackData/getPostsByCategoryId_${id}.json`)
+        : [],
   });
 };
 

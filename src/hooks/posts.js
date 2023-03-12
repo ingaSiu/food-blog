@@ -7,7 +7,8 @@ export const useAllPostsQuery = () => {
   return useQuery({
     queryKey: 'getAllPosts',
     queryFn: getAllPosts,
-    initialData: process.env.REACT_APP_FALLBACK_MODE ? require('../api/fallbackData/getPosts.json') : [],
+    initialData:
+      process.env.REACT_APP_FALLBACK_MODE.toLowerCase === 'true' ? require('../api/fallbackData/getPosts.json') : [],
   });
 };
 
@@ -15,7 +16,10 @@ export const usePostQuery = (id) => {
   return useQuery({
     queryKey: ['getPost', id],
     queryFn: getPost,
-    initialData: process.env.REACT_APP_FALLBACK_MODE ? require(`../api/fallbackData/getPostsId_${id}.json`) : {},
+    initialData:
+      process.env.REACT_APP_FALLBACK_MODE.toLowerCase === 'true'
+        ? require(`../api/fallbackData/getPostsId_${id}.json`)
+        : {},
   });
 };
 
