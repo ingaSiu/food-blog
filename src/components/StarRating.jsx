@@ -7,6 +7,13 @@ const StarRating = ({ ratingCount }) => {
       <p>Rate this recipe!</p>
       <RatingContainer>
         <Rating name="size-large" defaultValue={1} size="large" />
+        {/* <Rating
+          name="simple-controlled"
+          //value={value}
+          onChange={(event, newValue) => {
+    setValue(newValue);
+  }}
+        /> */}
         <p>Total score: {ratingCount}</p>
       </RatingContainer>
     </RatingWrapper>
