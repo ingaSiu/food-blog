@@ -33,13 +33,7 @@ const StarRating = ({ ratingCount, rating, id }) => {
             handleRating(id, newValue);
           }}
         />
-        {/* <Rating
-          name="simple-controlled"
-          //value={value}
-          onChange={(event, newValue) => {
-    setValue(newValue);
-  }}
-        /> */}
+
         <p>
           Total score: {rating} from {ratingCount} users
         </p>
