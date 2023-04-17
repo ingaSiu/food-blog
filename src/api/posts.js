@@ -50,3 +50,10 @@ export const deletePost = (id) => {
     return alert('item was deleted IN httpClient');
   });
 };
+
+export const ratePost = ({ id, stars }) => {
+  console.log('stars in api: ' + stars);
+  return httpClient.put(`${PUBLIC_URLS.rate}${id}`, { rating: stars }).then((response) => {
+    return response.data;
+  });
+};
