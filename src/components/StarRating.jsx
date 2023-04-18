@@ -35,7 +35,7 @@ const StarRating = ({ ratingCount, rating, id }) => {
         />
 
         <p>
-          Total score: {rating} from {ratingCount} users
+          Total score: {Number(rating).toFixed(2)} from {ratingCount} users
         </p>
       </RatingContainer>
     </RatingWrapper>
