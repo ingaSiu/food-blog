@@ -7,7 +7,6 @@ import StarRating from '../components/StarRating';
 import { useGetCommentsByPostId } from '../hooks/comments';
 import { useParams } from 'react-router-dom';
 import { usePostQuery } from '../hooks/posts';
-import { useState } from 'react';
 
 const RecipePage = () => {
   const { recipeId } = useParams();
