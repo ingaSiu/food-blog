@@ -3,12 +3,12 @@ import * as Yup from 'yup';
 import { BtnContainer, CloseBtn, CloseBtnContainer, FormBackground, FormContainer } from './Form.styled';
 import { Form, Formik } from 'formik';
 import { FormikInput, FormikSelect, FormikTextarea } from './FormikInputs';
+import { useEditPost, usePostInsert } from '../../hooks/posts';
 
 import ButtonMain from '../Button';
 import styled from 'styled-components';
 import { toast } from 'react-hot-toast';
 import { useAllCategoriesQuery } from '../../hooks/categories';
-import { usePostInsert } from '../../hooks/posts';
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -22,21 +22,52 @@ const validationSchema = Yup.object().shape({
   categoryId: Yup.string().required('Required. Please choose a category'),
 });
 
-const CreateNewPost = ({ closeForm }) => {
+const CreateNewPost = ({ closeForm, post, postId }) => {
+  const initialValues = {
+    title: '',
+    imageUrl: '',
+    content: '',
+    categoryId: '',
+  };
+
   const { mutateAsync: createPost } = usePostInsert();
+  const { mutateAsync: editPost } = useEditPost();
   const { data: categories } = useAllCategoriesQuery();
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     console.log('SUBMIT POST');
     console.log(values);
-    createPost(values)
-      .then(() => {
-        setSubmitting(false);
-        toast.success('New recipe post created!');
-        resetForm();
-      })
-      .catch((error) => console.log(error));
+
+    if (postId) {
+      const postValues = { ...values, id: postId };
+      editPost(postValues)
+        .then((response) => {
+          console.log(response);
+          resetForm();
+          toast.success('Post edited succesfully');
+        })
+        .catch((error) => {
+          if (error.response.status === 401) {
+            toast.error('Session ended');
+          }
+          console.error('Failed to edit post');
+          toast.error('Failed to edit post');
+        });
+    } else {
+      createPost(values)
+        .then(() => {
+          setSubmitting(false);
+          toast.success('New recipe post created!');
+          resetForm();
+        })
+        .catch((error) => {
+          console.log(error);
+          toast.error('Failed to create post');
+        });
+    }
   };
+
+  // kaip paimti patikrinimui initial values?
 
   return (
     <FormBackground>
@@ -44,16 +75,7 @@ const CreateNewPost = ({ closeForm }) => {
         <CloseBtnContainer>
           <CloseBtn onClick={() => closeForm(false)}>X</CloseBtn>
         </CloseBtnContainer>
-        <Formik
-          initialValues={{
-            title: '',
-            imageUrl: '',
-            content: '',
-            categoryId: '',
-          }}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
+        <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
           {({ isSubmitting }) => (
             <FormStyle>
               <h1>Create a new post</h1>
