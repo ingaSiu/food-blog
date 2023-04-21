@@ -1,4 +1,4 @@
-import { deletePost, getAllPosts, getPost, insertPost, ratePost } from '../api/posts';
+import { deletePost, editPost, getAllPosts, getPost, insertPost, ratePost } from '../api/posts';
 import { useMutation, useQuery } from 'react-query';
 
 import { queryClient } from '../App';
@@ -39,6 +39,16 @@ export const useDeletePost = () => {
       queryClient.invalidateQueries({ queryKey: ['getAllPosts'] });
       queryClient.invalidateQueries({ queryKey: ['getPost'] });
       alert('item was deleted IN MUTATION');
+    },
+  });
+};
+
+export const useEditPost = () => {
+  return useMutation({
+    mutationFn: editPost,
+
+    onError: () => {
+      console.log('Error then editing answer');
     },
   });
 };
