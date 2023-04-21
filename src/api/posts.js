@@ -51,6 +51,12 @@ export const deletePost = (id) => {
   });
 };
 
+export const editPost = ({ id, post }) => {
+  return httpClient.put(`${ADMIN_URLS.update}${id}`, { post }).then((response) => {
+    return console.log('Post was edited');
+  });
+};
+
 export const ratePost = ({ id, stars }) => {
   console.log('stars in api: ' + stars);
   return httpClient.put(`${PUBLIC_URLS.rate}${id}`, { rating: stars }).then((response) => {
