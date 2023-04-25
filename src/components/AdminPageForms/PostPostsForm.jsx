@@ -23,13 +23,21 @@ const validationSchema = Yup.object().shape({
 });
 
 const CreateNewPost = ({ closeForm, post, postId }) => {
-  const initialValues = {
+  let initialValues = {
     title: '',
     imageUrl: '',
     content: '',
     categoryId: '',
   };
 
+  if (post && postId) {
+    initialValues = {
+      title: post.title ? post.title : '',
+      imageUrl: post.imageUrl ? post.imageUrl : '',
+      content: post.content ? post.content : '',
+      categoryId: post.categoryId ? post.categoryId : '',
+    };
+  }
   const { mutateAsync: createPost } = usePostInsert();
   const { mutateAsync: editPost } = useEditPost();
   const { data: categories } = useAllCategoriesQuery();
@@ -38,12 +46,15 @@ const CreateNewPost = ({ closeForm, post, postId }) => {
     console.log('SUBMIT POST');
     console.log(values);
 
-    if (postId) {
-      const postValues = { ...values, id: postId };
+    if (post && postId) {
+      const postObj = { post: values };
+      const postValues = { ...postObj, id: postId };
+      console.log(postValues);
       editPost(postValues)
         .then((response) => {
+          setSubmitting(false);
           console.log(response);
-          resetForm();
+          closeForm(false);
           toast.success('Post edited succesfully');
         })
         .catch((error) => {
@@ -58,6 +69,7 @@ const CreateNewPost = ({ closeForm, post, postId }) => {
         .then(() => {
           setSubmitting(false);
           toast.success('New recipe post created!');
+          closeForm(false);
           resetForm();
         })
         .catch((error) => {
@@ -66,8 +78,6 @@ const CreateNewPost = ({ closeForm, post, postId }) => {
         });
     }
   };
-
-  // kaip paimti patikrinimui initial values?
 
   return (
     <FormBackground>
@@ -78,7 +88,8 @@ const CreateNewPost = ({ closeForm, post, postId }) => {
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
           {({ isSubmitting }) => (
             <FormStyle>
-              <h1>Create a new post</h1>
+              {post && postId ? <h1>Edit post</h1> : <h1>Create a new post</h1>}
+
               <FormikInput name="title" placeholder="Post title" />
               <FormikInput name="imageUrl" placeholder="Main image URL" />
               <FormikTextarea name="content" placeholder="Write post content" />
@@ -87,7 +98,7 @@ const CreateNewPost = ({ closeForm, post, postId }) => {
                 <option value="">Choose a category </option>
                 {categories &&
                   categories.map((item) => (
-                    <option key={item._id} value={item._id}>
+                    <option key={item._id} value={item._id} selected={post && postId && item._id === post.categoryId}>
                       {item.title}
                     </option>
                   ))}
