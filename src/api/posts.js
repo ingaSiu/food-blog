@@ -52,7 +52,7 @@ export const deletePost = (id) => {
 };
 
 export const editPost = ({ id, post }) => {
-  return httpClient.put(`${ADMIN_URLS.update}${id}`, { post }).then((response) => {
+  return httpClient.put(`${ADMIN_URLS.update}${id}`, post).then((response) => {
     return console.log('Post was edited');
   });
 };
