@@ -15,7 +15,7 @@ import TableRow from '@mui/material/TableRow';
 import { toast } from 'react-hot-toast';
 import { useAllCategoriesQuery } from '../../hooks/categories';
 
-const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
+const PostsTable = ({ openEditModal }) => {
   const { data: posts } = useAllPostsQuery();
   const { data: categories } = useAllCategoriesQuery();
   const [postsWithNames, setPostsWithNames] = useState([]);
@@ -71,9 +71,9 @@ const PostsTable = ({ delIcon, editIcon, viewIcon }) => {
                 <TableCell align="right">{post._id}</TableCell>
                 <TableCell align="right">{post.categoryId}</TableCell>
                 <TableCell align="right">{post.categoryTitle}</TableCell>
-                <TableCell align="center">{(editIcon = <EdIcon onClick={() => alert('test ed')} />)}</TableCell>
-                <TableCell align="center">{(delIcon = <DelIcon onClick={() => clickDelete(post._id)} />)}</TableCell>
-                <TableCell align="center">{(viewIcon = <PreviewPage recipeId={post._id} />)}</TableCell>
+                <TableCell align="center">{<EdIcon onClick={() => openEditModal(post, post._id)} />}</TableCell>
+                <TableCell align="center">{<DelIcon onClick={() => clickDelete(post._id)} />}</TableCell>
+                <TableCell align="center">{<PreviewPage recipeId={post._id} />}</TableCell>
               </TableRow>
             ))}
           </TableBody>
