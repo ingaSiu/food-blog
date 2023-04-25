@@ -46,6 +46,11 @@ export const useDeletePost = () => {
 export const useEditPost = () => {
   return useMutation({
     mutationFn: editPost,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['getAllPosts'] });
+      queryClient.invalidateQueries({ queryKey: ['getPost'] });
+      alert('item was edited IN MUTATION');
+    },
 
     onError: () => {
       console.log('Error then editing answer');
