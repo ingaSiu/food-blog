@@ -14,11 +14,7 @@ const ADMIN_CATEGORIES_URLS = {
 };
 
 export const getAllCategories = () => {
-  console.log('START get all categories');
-  console.log(PUBLIC_CATEGORIES_URLS.getAllCategories);
   return httpClient.get(PUBLIC_CATEGORIES_URLS.getAllCategories).then((response) => {
-    console.log('SUCCESS getAllCategories');
-    console.log(response.data);
     return response.data;
   });
 };
