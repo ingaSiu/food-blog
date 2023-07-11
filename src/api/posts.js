@@ -15,11 +15,7 @@ const ADMIN_URLS = {
 };
 
 export const getAllPosts = () => {
-  console.log('START getAllPosts');
-  console.log(PUBLIC_URLS.getAll);
   return httpClient.get(PUBLIC_URLS.getAll).then((response) => {
-    console.log('SUCCESS getAllPosts');
-    console.log(response.data);
     return response.data;
   });
 };
