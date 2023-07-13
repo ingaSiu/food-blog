@@ -21,16 +21,12 @@ export const getAllCategories = () => {
 
 export const getPostsByCategory = ({ queryKey }) => {
   const id = queryKey[1];
-  console.log('START get all posts by category');
-  console.log(PUBLIC_CATEGORIES_URLS.getPostsByCategory);
   return httpClient.get(`${PUBLIC_CATEGORIES_URLS.getPostsByCategory}${id}`).then((response) => {
     return response.data;
   });
 };
 
 export const insertCategory = (category) => {
-  console.log(`START insertCat`);
-  console.log(`${ADMIN_CATEGORIES_URLS.insert}`);
   return httpClient.post(`${ADMIN_CATEGORIES_URLS.insert}`, category).then((response) => {
     console.log('SUCCESS insertPost');
     console.log(response.data);
