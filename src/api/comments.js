@@ -21,8 +21,6 @@ export const getAllComments = () => {
 
 export const getCommentsByPostId = ({ queryKey }) => {
   const id = queryKey[1];
-  console.log('START get all comments by id');
-  console.log(`${PUBLIC_COMMENTS_URLS.getCommentsByPostId}${id}`);
   return httpClient.get(`${PUBLIC_COMMENTS_URLS.getCommentsByPostId}${id}`).then((response) => {
     return response.data;
   });
