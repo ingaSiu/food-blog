@@ -16,6 +16,9 @@ export const NavbarLinkContainer = styled.div`
   display: flex;
   text-decoration: none;
   color: black;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const NavbarLink = styled(Link)`
