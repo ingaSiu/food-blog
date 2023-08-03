@@ -7,6 +7,10 @@ export const SidebarContainer = styled.div`
   /* border: 1px solid black; */
   padding: 15px 30px;
   margin-left: 30px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SmallWrapper = styled.div`
