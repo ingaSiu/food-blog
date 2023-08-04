@@ -1,6 +1,7 @@
 import { NavbarLink, NavbarLinkContainer } from '../styles/Navbar.styled';
 import { useRef, useState } from 'react';
 
+import SearchBarComponent from '../SearchBarComponent';
 import { SlidingMenu } from './MobileMenu.styled';
 
 const MobileMenu = ({ links }) => {
@@ -21,6 +22,7 @@ const MobileMenu = ({ links }) => {
             </NavbarLink>
           ))}
         </NavbarLinkContainer>
+        <SearchBarComponent />
       </SlidingMenu>
     </>
   );
