@@ -16,6 +16,15 @@ export const FoodCardStyle = styled.div`
   }
   img {
     width: 700px;
+
+    @media (max-width: 400px) {
+      width: 60%;
+      height: auto;
+    }
+    @media (max-width: 768px) {
+      max-width: 90%;
+      height: auto;
+    }
   }
 `;
 

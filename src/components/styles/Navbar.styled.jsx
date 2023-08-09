@@ -12,10 +12,19 @@ export const NavbarContainer = styled.div`
   margin-top: 10px;
 `;
 
+export const SmallLogo = styled.img`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
 export const NavbarLinkContainer = styled.div`
   display: flex;
   text-decoration: none;
   color: black;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const NavbarLink = styled(Link)`
