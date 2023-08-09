@@ -13,11 +13,11 @@ const MainLayout = ({ children }) => {
   const links = [
     {
       path: HOME_PATH,
-      title: 'Recipes',
+      title: 'RECIPES',
     },
     {
       path: TRAVEL_PATH,
-      title: 'Travel',
+      title: 'TRAVEL',
     },
     {
       path: ABOUT_ME_PATH,
