@@ -1,29 +1,32 @@
-import { NavbarLink, NavbarLinkContainer } from '../styles/Navbar.styled';
-import { useRef, useState } from 'react';
+import { LinkContainerMobile, MenuWrapper, MobileLink, SlidingMenu } from './MobileMenu.styled';
 
-import SearchBarComponent from '../SearchBarComponent';
-import { SlidingMenu } from './MobileMenu.styled';
+import { useState } from 'react';
 
 const MobileMenu = ({ links }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const menuRef = useRef(null);
 
   const handleClick = () => {
     setIsOpened((prev) => !prev);
-    menuRef.current?.classList.toggle(styles.active);
   };
   return (
     <>
-      <SlidingMenu ref={menuRef}>
-        <NavbarLinkContainer>
+      <SlidingMenu active={isOpened}>
+        <LinkContainerMobile>
           {links.map((item) => (
-            <NavbarLink key={item.path} to={item.path}>
+            <MobileLink key={item.path} to={item.path}>
               {item.title}
-            </NavbarLink>
+            </MobileLink>
           ))}
-        </NavbarLinkContainer>
-        <SearchBarComponent />
+        </LinkContainerMobile>
       </SlidingMenu>
+
+      <MenuWrapper onClick={handleClick}>
+        {isOpened ? (
+          <img src="close.svg" alt="Close menu icon" width={19} height={16} />
+        ) : (
+          <img src="menu.svg" alt="Open menu icon" width={19} height={16} />
+        )}
+      </MenuWrapper>
     </>
   );
 };
