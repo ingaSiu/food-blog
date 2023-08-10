@@ -9,9 +9,6 @@ export const SearchContainer = styled.div`
     top: 8px;
     font-size: 22px;
   }
-  @media (max-width: 400px) {
-    display: none;
-  }
 `;
 export const SearchInput = styled.input`
   border: 1px solid #f4f4f4;
@@ -32,7 +29,9 @@ export const ContentContainer = styled.div`
 
   p {
     padding-left: 5px;
-
     font-size: 15px;
+    &:hover {
+      color: #b46b2b;
+    }
   }
 `;
