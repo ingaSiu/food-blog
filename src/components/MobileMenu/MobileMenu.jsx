@@ -1,5 +1,6 @@
 import { LinkContainerMobile, MenuWrapper, MobileLink, SlidingMenu } from './MobileMenu.styled';
 
+import SearchBarComponent from '../SearchBarComponent';
 import { useState } from 'react';
 
 const MobileMenu = ({ links }) => {
@@ -18,6 +19,7 @@ const MobileMenu = ({ links }) => {
             </MobileLink>
           ))}
         </LinkContainerMobile>
+        <SearchBarComponent />
       </SlidingMenu>
 
       <MenuWrapper onClick={handleClick}>
