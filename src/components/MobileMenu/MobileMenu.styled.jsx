@@ -32,8 +32,9 @@ export const MobileLink = styled(Link)`
   color: inherit;
   font-size: 0.875rem;
   text-decoration: none;
+
   &:hover {
-    color: #4eb3e3;
+    color: #b46b2b;
   }
 `;
 
