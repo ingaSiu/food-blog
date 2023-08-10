@@ -53,4 +53,8 @@ export const CommentsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;

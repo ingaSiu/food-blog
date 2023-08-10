@@ -24,6 +24,15 @@ export const ImageContainer = styled.div`
   width: 700px;
   img {
     width: 100%;
+
+    @media (max-width: 400px) {
+      width: 60%;
+      height: auto;
+    }
+    @media (max-width: 768px) {
+      max-width: 90%;
+      height: auto;
+    }
   }
 `;
 export const ContentContainer = styled.div`
@@ -34,6 +43,9 @@ export const ContentContainer = styled.div`
   ol,
   li {
     align-self: flex-start;
+    @media (max-width: 768px) {
+      align-self: center;
+    }
   }
   p {
     max-width: 650px;
@@ -44,5 +56,13 @@ export const ContentContainer = styled.div`
   }
   img {
     width: 700px;
+    @media (max-width: 400px) {
+      width: 60%;
+      height: auto;
+    }
+    @media (max-width: 768px) {
+      max-width: 90%;
+      height: auto;
+    }
   }
 `;
