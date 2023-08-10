@@ -18,6 +18,12 @@ export const SmallLogo = styled.img`
   }
 `;
 
+export const SearchWrapper = styled.div`
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
 export const NavbarLinkContainer = styled.div`
   display: flex;
   text-decoration: none;
