@@ -5,6 +5,7 @@ import {
   NavbarContainer,
   NavbarLink,
   NavbarLinkContainer,
+  SearchWrapper,
   SmallLogo,
 } from './styles/Navbar.styled';
 
@@ -36,7 +37,11 @@ const Navbar = ({ links, homeLink, isAdmin, onClick }) => {
           ))}
         </NavbarLinkContainer>
 
-        {!isAdmin && <SearchBarComponent />}
+        {!isAdmin && (
+          <SearchWrapper>
+            <SearchBarComponent />
+          </SearchWrapper>
+        )}
         {isAdmin && (
           <ButtonLink to={homeLink} onClick={onClick}>
             <ButtonStyle>Logout</ButtonStyle>
