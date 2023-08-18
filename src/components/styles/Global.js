@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
  body, button, form, input, textarea, select {
   font-family: 'Lato', sans-serif;
