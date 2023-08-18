@@ -40,7 +40,7 @@ export const ImageContainer = styled.div`
       height: auto;
     }
     @media (max-width: 400px) {
-      width: 50%;
+      width: 40%;
       height: auto;
     }
   }
@@ -55,6 +55,7 @@ export const ContentContainer = styled.div`
     align-self: flex-start;
     @media (max-width: 768px) {
       align-self: center;
+      width: 50%;
     }
   }
   p {
@@ -62,6 +63,9 @@ export const ContentContainer = styled.div`
     padding: 10px;
     @media (max-width: 768px) {
       width: 70%;
+    }
+    @media (max-width: 400px) {
+      width: 40%;
     }
   }
   h4 {
@@ -76,7 +80,7 @@ export const ContentContainer = styled.div`
       align-self: center;
     }
     @media (max-width: 400px) {
-      width: 50%;
+      width: 40%;
       height: auto;
       align-self: center;
     }
