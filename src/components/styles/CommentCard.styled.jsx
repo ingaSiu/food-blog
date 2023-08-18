@@ -55,6 +55,9 @@ export const CommentsWrapper = styled.div`
   gap: 10px;
 
   @media (max-width: 768px) {
-    justify-content: center;
+    width: 60%;
+  }
+  @media (max-width: 400px) {
+    width: 50%;
   }
 `;

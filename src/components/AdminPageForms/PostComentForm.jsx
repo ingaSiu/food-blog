@@ -64,4 +64,5 @@ const FormStyle = styled(Form)`
   padding: 10px;
   margin: 20px;
   gap: 20px;
+  justify-content: center;
 `;

@@ -46,6 +46,10 @@ export default StarRating;
 
 export const RatingWrapper = styled.div`
   padding: 10px;
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const RatingContainer = styled.div`
@@ -54,5 +58,8 @@ const RatingContainer = styled.div`
   p {
     font-size: 18px;
     margin: 7px;
+  }
+  @media (max-width: 400px) {
+    flex-direction: column;
   }
 `;

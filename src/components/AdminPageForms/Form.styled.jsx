@@ -26,6 +26,10 @@ export const CommentFormContainer = styled.div`
   h2 {
     text-align: center;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 export const CloseBtnContainer = styled.div`
