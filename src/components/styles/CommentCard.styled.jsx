@@ -54,11 +54,10 @@ export const CommentsWrapper = styled.div`
   flex-direction: column;
   gap: 10px;
 
-  @media (max-width: 400px) {
-    width: 30%;
-  }
-
   @media (max-width: 768px) {
     width: 60%;
+  }
+  @media (max-width: 400px) {
+    width: 50%;
   }
 `;
