@@ -4,7 +4,7 @@
 + This project was done during my Front-End studies in CodeAcademy. My main objective was to deepen my knowledge in React library, especially about API and React hooks. 
 
 ## Demo
-:eyes: [Demo](https://food-blog.ingasiu.online/#/)
+:eyes: [Demo](https://food-blog.ingasiu.lt/#/)
 
 ## Functionality 
 
